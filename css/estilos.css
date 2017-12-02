@@ -49,11 +49,11 @@ li::after,li::before{
 
 }
 li::after{
-    left: -15px;
+    left: -17px;
 }
 
 li::before{
-    right: -15px;
+    right: -17px;
 }
 
 h1:hover::after,h1:hover::before,li:hover::after,li:hover::before{
