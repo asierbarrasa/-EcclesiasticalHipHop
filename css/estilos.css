@@ -8,6 +8,9 @@ body {
 nav{
     display: inline-block;
     font-size: 20px;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 li{
     display: inline-block;
@@ -61,4 +64,46 @@ h1:hover::after,h1:hover::before,li:hover::after,li:hover::before{
     transform: scale(1);
 }
 
+input{
+    border: none;
+     border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
 
+input:hover{
+   border-bottom: 2px solid firebrick;
+}
+
+input:focus{
+    border-bottom: 2px solid firebrick;
+
+}
+
+
+
+.btn{
+    background-color: white;
+    font-family: 'Dancing Script', cursive;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.insertar{
+    font-size: 20px;
+}
+label{
+    font-size: 20px;
+}
+
+#mainSection div{
+    display: block;
+    border: 1px solid black;
+    width: 60%;
+    margin-left: 20%;
+    margin-right:20%;
+    height: auto;
+}
+
+.formulario {
+    margin-top: 50px;
+}
