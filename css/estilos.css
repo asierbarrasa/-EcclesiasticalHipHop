@@ -7,6 +7,7 @@ body {
 
 nav{
     display: inline-block;
+    font-size: 20px;
 }
 li{
     display: inline-block;
@@ -41,7 +42,7 @@ li::after,li::before{
     content: '';
     position: absolute;
     width: 10px;
-    height: 1px;
+    height: 1.5px;
     top: 0.7em;
     background-color: black;
     transform: scale(0);
