@@ -3,22 +3,19 @@
 <canciones>
 	<cancion>
 		<nombre>
-			<value></value>
+			<value>El mejor</value>
 		</nombre>
 		<artista>
-			<value></value>
+			<value>Aitor</value>
 		</artista>
 		<genero>
-			<value></value>
+			<value>Trap</value>
 		</genero>
     <ano>
-			<value></value>
+			<value>2018</value>
 		</ano>
-    <genero>
-			<value></value>
-		</genero>
     <path>
-			<value></value>
+			<value>../xml/Aitor.mp3</value>
 		</path>
 	</cancion>
-<canciones>
+</canciones>
