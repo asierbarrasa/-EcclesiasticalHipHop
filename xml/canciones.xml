@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="verPreguntas.xsl"?>
+<canciones>
+	<cancion>
+		<nombre>
+			<value></value>
+		</nombre>
+		<artista>
+			<value></value>
+		</artista>
+		<genero>
+			<value></value>
+		</genero>
+    <ano>
+			<value></value>
+		</ano>
+    <genero>
+			<value></value>
+		</genero>
+    <path>
+			<value></value>
+		</path>
+	</cancion>
+<canciones>
