@@ -2,7 +2,7 @@
 
 $email = $_POST["email"];
 $pass = crypt($_POST["pass"], "Ap");
-$link = mysqli_connect("localhost", "id2921858_ecclHipHop","gruposar6","id2921858_ecclHipHop");
+$link = mysqli_connect("localhost", "id3865054_ecclhiphop","******","id3865054_ecclhiphop");
 $sql = "Select * from Users where email = $email";
 $result = mysqli_query($link, $sql);
 $row = mysqli_fetch_assoc($result);
