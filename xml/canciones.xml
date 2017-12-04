@@ -18,4 +18,21 @@
 			<value>../xml/Aitor.mp3</value>
 		</path>
 	</cancion>
+	<cancion>
+		<nombre>
+			<value>Un temón</value>
+		</nombre>
+		<artista>
+			<value>Aitor</value>
+		</artista>
+		<genero>
+			<value>Reggaeton</value>
+		</genero>
+    <ano>
+			<value>2017</value>
+		</ano>
+    <path>
+			<value>../xml/reggaeton.mp3</value>
+		</path>
+	</cancion>
 </canciones>
