@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel='stylesheet' type='text/css' href='../css/estilos.css' />
+</head>
+<body>
+     <h1>Ecclesiastical Hip Hop</h1>
+    <section class="insertar">
+        <form class="formulario" id="form" action="" method="">
+            <label for="">Correo: </label>
+            <br>
+            <input type="email" name="email" required>
+            <br>
+            <label for="">Contraseña: </label>
+            <br>
+            <input type="password" id="pass" name="pass" required>
+            <br>
+            <label for="">Repetir Contraseña:</label>
+            <br>
+            <input type="password" required>
+            <br>
+            <br>
+            <input type="submit" value="Registrarse" class="btn">
+
+        </form>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+
+    $("#form").submit(function(){
+
+      if($("#pass").val().length < 6){
+        alert("La contraseña tiene que ser mayor de 6 caracteres");
+      }
+      else{
+        var data = new FormData(this);
+        $.ajax({
+          url: '../php/signUp.php',
+          type: 'POST',
+          data: data,
+          processData: false,
+          cache: false,
+          contentType: false,
+          success: function(e){
+              console.log(e);
+             }
+        });
+      }
+      return false;
+    });
+
+    </script>
+</body>
+</html>
