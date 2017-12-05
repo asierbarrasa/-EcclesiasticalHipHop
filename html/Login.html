@@ -7,22 +7,40 @@
     <link rel='stylesheet' type='text/css' href='../css/estilos.css' />
 </head>
 <body>
-     <h1>Ecclesiastical Hip Hop</h1>
+    <h1>Ecclesiastical Hip Hop</h1>
     <section class="insertar">
-        <form class="formulario" action="" method="">
-            <label for="">Correo: </label>
+        <form class="formulario" action="" method="post" id="flogin" name="flogin" enctype="multipart/form-data">
+            <label>Correo: </label><br><input type="text" name="email" id="email">
             <br>
-            <input type="text">
-            <br>
-            <label for="">Contraseña: </label>
-            <br>
-            <input type="password">
-            <br>
-
-            <br>
-            <input type="submit" value="Entrar" class="btn">
-
+            <label>Contraseña: </label><br><input type="password" name="pass" id="pass1">
+            <br><br>
+            <input type="submit" value="Entrar" class="btn" id="btn">
         </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    $("#flogin").submit(function() {
+
+          var dataForm = new FormData();
+          dataForm.append('email', $("#email").val());
+          dataForm.append('pass', $("#pass1").val());
+          console.log("Aqui");
+          $.ajax({
+
+              url: '../php/login.php',
+              type: 'POST',
+              data: dataForm,
+              processData: false,
+              cache: false,
+              contentType: false,
+              success: function(e){
+                  console.log(e);
+                 }
+          });
+         return false;
+
+    });
+
+        </script>
     </section>
 </body>
 </html>
