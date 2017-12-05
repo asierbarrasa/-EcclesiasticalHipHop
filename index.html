@@ -13,14 +13,27 @@
         <ul>
             <li><a href="/html/AnadirCancion.html">Añadir canción</a></li>
             <li>Tu biblioteca</li>
-            <li>Toda la musica</li>
+            <li><a id="globalmusic" >Toda la musica</a></li>
         </ul>
     </nav>
 
     <section class="insertar" id="mainSection">
-       <div>
+       <div id="res">
         Prueba2
        </div>
     </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script>
+            $("#globalmusic").click(function(){
+                console.log("Entra");
+                $.ajax({
+                    url:"/php/getListaCanciones.php",
+                    type:'POST',
+                    success: function(e){
+                        $("#res").html(e);
+                    }
+                });
+            });
+        </script>
 </body>
 </html>
