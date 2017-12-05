@@ -12,5 +12,13 @@ foreach($xml->xpath('//cancion') as $cancion){
 
 echo '</table>';
 
+echo ' <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>';
+echo  '<script>$("audio").bind("play", function() {
+  activated = this;
+  $('.'"audio"'.').each(function() {
+    if(this != activated) this.pause();
+  });
+});</script>';
+
 
  ?>
