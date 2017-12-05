@@ -1,5 +1,8 @@
 <?php
-$xml = simplexml_load_file("../xml/canciones.xml");
+session_start();
+$us = $_SESSION["email"];
+$path = "../Users/$us/canciones.xml";
+$xml = simplexml_load_file($path);
 echo '<table border=1> <tr> <th> Nombre </th> <th> Artista </th>'
     .'<th> Genero </th><th> Año </th><th> Reproducir </th></tr>';
 
