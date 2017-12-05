@@ -1,8 +1,6 @@
 <?php
 $email = $_POST["email"];
 $pass =$_POST["pass"];
-echo $email;
-echo $pass;
 $link = mysqli_connect("localhost", "id3865054_ecclhiphop","gruposar6","id3865054_ecclhiphop");
 $sql = "Select * FROM Users Where email = '".$email."'";
 $result = mysqli_query($link, $sql);
@@ -18,6 +16,7 @@ if(mysqli_num_rows($result)==1){
    // die("Error");
   }
 
-}
+}else{
   echo "no existe";
+}
 ?>
