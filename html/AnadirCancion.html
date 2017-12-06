@@ -12,19 +12,19 @@
         <form class="formulario" action="" method="" id="fanadir" enctype ="multipart/form-data ">
             <label for="">Titulo: </label>
             <br>
-            <input type="text">
+            <input type="text" id="titulo">
             <br>
             <label for="">Artista: </label>
             <br>
-            <input type="text">
+            <input type="text" id="artista" >
             <br>
             <label for="">Genero:</label>
             <br>
-            <input type="text">
+            <input type="text" id="genero">
             <br>
             <label for="">Año:</label>
             <br>
-            <input type="text" >
+            <input type="text" id="ano">
             <br>
             <label for="">Seleccionar cancion:</label>
             <br>
@@ -41,17 +41,18 @@ $("#fanadir").submit(function(){
   var dataF = new FormData(this);
  $.ajax({
    url : '../php/anadirCancion.php',
-   type:'post',
+   type:'POST',
    data: dataF,
    processData: false,
    cache: false,
    contentType: false,
    success: function(e){
      console.log(e);
-     window.location.assign('../html/AnadirCancion.html');
-     alert("Cancion añadida correctamente.");
+	 console.log(dataF);
+    //window.location.assign('../html/AnadirCancion.html');
    }
  });
+ return false;
 });
 </script>
 </body>

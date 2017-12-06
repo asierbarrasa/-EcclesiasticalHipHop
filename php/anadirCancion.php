@@ -1,54 +1,58 @@
 <?php
+	session_start();
 	if (isset($_POST['titulo'])){
 				if(empty($_POST['artista'])|| empty($_POST['genero'])|| empty($_POST['ano'] ||empty($_FILES["audio"])){
 					echo '<script>alert("Rellene todos los campos.");</script>';
 				}else{
-              if (is_uploaded_file($_FILES["audio"]["tmp_name"])){
-											$fecha = getdate();
-                      $ruta = '../Users/'.$_SESSION["email"].'/'.$fecha[year].$fecha[mon].$fecha[mday].$fecha[hours].$fecha[minutes].$fecha[seconds];
-                      move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
-              }
-    					$xml = simplexml_load_file('../Users/'.$_SESSION["email"].'/canciones.xml');
+					if (is_uploaded_file($_FILES["audio"]["tmp_name"])){
+							$fecha = getdate();
+						  $ruta = '../Users/'.$_SESSION["email"].'/'.$fecha[year].$fecha[mon].$fecha[mday].$fecha[hours].$fecha[minutes].$fecha[seconds];
+						  echo '$ruta';
+						  move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
 
-    					$cancion = $xml->addChild('cancion');
+							$xml = simplexml_load_file('../Users/'.$_SESSION["email"].'/canciones.xml');
 
-    					$titulo = $cancion -> addChild('titulo');
-    					$titulo -> addChild('value',$_POST['titulo']);
+							$cancion = $xml->addChild('cancion');
 
-              $artista = $cancion -> addChild('artista');
-    					$artista -> addChild('value',$_POST['artista']);
+							$titulo = $cancion -> addChild('titulo');
+							$titulo -> addChild('value',$_POST['titulo']);
 
-              $genero = $cancion -> addChild('genero');
-    					$genero -> addChild('value',$_POST['genero']);
+							$artista = $cancion -> addChild('artista');
+							$artista -> addChild('value',$_POST['artista']);
 
-              $ano = $cancion -> addChild('ano');
-    					$ano -> addChild('value',$_POST['ano']);
+							$genero = $cancion -> addChild('genero');
+							$genero -> addChild('value',$_POST['genero']);
 
-              $path = $cancion -> addChild('path');
-    					$path -> addChild('value','../Users/'.$_SESSION["email"].'/'.$fecha[year].$fecha[mon].$fecha[mday].$fecha[hours].$fecha[minutes].$fecha[seconds]);
+							$ano = $cancion -> addChild('ano');
+							$ano -> addChild('value',$_POST['ano']);
 
-    					$xml->asXML('canciones.xml');
+							$path = $cancion -> addChild('path');
+							$path -> addChild('value','../Users/'.$_SESSION["email"].'/'.$fecha[year].$fecha[mon].$fecha[mday].$fecha[hours].$fecha[minutes].$fecha[seconds]);
 
-              $xml2 = simplexml_load_file('../canciones.xml');
+							$xml->asXML('canciones.xml');
 
-    					$cancion = $xml2->addChild('cancion');
+							$xml2 = simplexml_load_file('../canciones.xml');
 
-    					$titulo = $cancion -> addChild('titulo');
-    					$titulo -> addChild('value',$_POST['titulo']);
+							$cancion = $xml2->addChild('cancion');
 
-              $artista = $cancion -> addChild('artista');
-    					$artista -> addChild('value',$_POST['artista']);
+							$titulo = $cancion -> addChild('titulo');
+							$titulo -> addChild('value',$_POST['titulo']);
 
-              $genero = $cancion -> addChild('genero');
-    					$genero -> addChild('value',$_POST['genero']);
+							$artista = $cancion -> addChild('artista');
+							$artista -> addChild('value',$_POST['artista']);
 
-              $ano = $cancion -> addChild('ano');
-    					$ano -> addChild('value',$_POST['ano']);
+							$genero = $cancion -> addChild('genero');
+							$genero -> addChild('value',$_POST['genero']);
 
-              $path = $cancion -> addChild('path');
-    					$path -> addChild('value','../Users/'.$_SESSION["email"].'/'.$fecha[year].$fecha[mon].$fecha[mday].$fecha[hours].$fecha[minutes].$fecha[seconds]);
+							$ano = $cancion -> addChild('ano');
+							$ano -> addChild('value',$_POST['ano']);
 
-    					$xml2->asXML('canciones.xml');
+							$path = $cancion -> addChild('path');
+							$path -> addChild('value','../Users/'.$_SESSION["email"].'/'.$fecha[year].$fecha[mon].$fecha[mday].$fecha[hours].$fecha[minutes].$fecha[seconds]);
+
+							$xml2->asXML('canciones.xml');
+							echo '<script> alert("Cancion añadida correctamente.");</script>';
+				}
 				}
 			}
 ?>
