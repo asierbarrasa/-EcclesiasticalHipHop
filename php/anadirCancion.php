@@ -4,10 +4,10 @@
 					echo '<script>alert("Rellene todos los campos.");</script>';
 				}else{
               if (is_uploaded_file($_FILES["audio"]["tmp_name"])){
+											$fecha = getdate();
                       $ruta = '../Users/'.$_SESSION["email"].'/'.$fecha[year].$fecha[mon].$fecha[mday].$fecha[hours].$fecha[minutes].$fecha[seconds];
                       move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
               }
-							$fecha = getdate();
     					$xml = simplexml_load_file('../Users/'.$_SESSION["email"].'/canciones.xml');
 
     					$cancion = $xml->addChild('cancion');
