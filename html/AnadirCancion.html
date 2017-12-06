@@ -35,23 +35,24 @@
 
         </form>
     </section>
-</body>
-</html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
 $("#fanadir").submit(function(){
-  var data = new FormData(this);
+  var dataF = new FormData(this);
  $.ajax({
    url : '../php/anadirCancion.php',
    type:'post',
-   data: data;
-   processData = false;
+   data: dataF,
+   processData: false,
    cache: false,
-   contentType = false;
-   success: function(){
+   contentType: false,
+   success: function(e){
+     console.log(e);
      window.location.assign('../html/AnadirCancion.html');
      alert("Cancion añadida correctamente.");
    }
  });
 });
 </script>
+</body>
+</html>
