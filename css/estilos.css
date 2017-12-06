@@ -97,10 +97,10 @@ label{
 
 #mainSection div{
     display: block;
-    border: 1px solid black;
-    width: 60%;
-    margin-left: 20%;
-    margin-right:20%;
+   // border: 1px solid black;
+    width: 40%;
+    margin-left: 30%;
+    margin-right:30%;
     height: auto;
 }
 
@@ -112,3 +112,5 @@ a{
     text-decoration: none;
     color: black;
 }
+
+
