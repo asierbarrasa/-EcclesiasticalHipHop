@@ -1,13 +1,13 @@
 <?php
 	if (isset($_POST['titulo'])){
 				if(empty($_POST['artista'])|| empty($_POST['genero'])|| empty($_POST['ano'] ||empty($_FILES["audio"])){
-					echo "Rellene todos los campos.";
+					echo '<script>alert("Rellene todos los campos.");</script>';
 				}else{
               if (is_uploaded_file($_FILES["audio"]["tmp_name"])){
-                      $ruta = "../Users/'.$_SESSION["email"].'/".$_FILES["audio"]["name"];
+                      $ruta = '../Users/'.$_SESSION["email"].'/'.$fecha[year].$fecha[mon].$fecha[mday].$fecha[hours].$fecha[minutes].$fecha[seconds];
                       move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
               }
-
+							$fecha = getdate();
     					$xml = simplexml_load_file('../Users/'.$_SESSION["email"].'/canciones.xml');
 
     					$cancion = $xml->addChild('cancion');
@@ -25,7 +25,7 @@
     					$ano -> addChild('value',$_POST['ano']);
 
               $path = $cancion -> addChild('path');
-    					$path -> addChild('value','../Users/'.$_SESSION["email"].'/'.$_FILES["audio"]["name"]);
+    					$path -> addChild('value','../Users/'.$_SESSION["email"].'/'.$fecha[year].$fecha[mon].$fecha[mday].$fecha[hours].$fecha[minutes].$fecha[seconds]);
 
     					$xml->asXML('canciones.xml');
 
@@ -46,7 +46,7 @@
     					$ano -> addChild('value',$_POST['ano']);
 
               $path = $cancion -> addChild('path');
-    					$path -> addChild('value','../Users/'.$_SESSION["email"].'/'.$_FILES["audio"]["name"]);
+    					$path -> addChild('value','../Users/'.$_SESSION["email"].'/'.$fecha[year].$fecha[mon].$fecha[mday].$fecha[hours].$fecha[minutes].$fecha[seconds]);
 
     					$xml2->asXML('canciones.xml');
 				}

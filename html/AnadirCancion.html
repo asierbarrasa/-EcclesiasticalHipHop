@@ -9,7 +9,7 @@
 <body>
      <h1>Ecclesiastical Hip Hop</h1>
     <section class="insertar">
-        <form class="formulario" action="" method="">
+        <form class="formulario" action="" method="" id="fanadir" enctype ="multipart/form-data ">
             <label for="">Titulo: </label>
             <br>
             <input type="text">
@@ -24,12 +24,34 @@
             <br>
             <label for="">Año:</label>
             <br>
-            <input type="text">
+            <input type="text" >
+            <br>
+            <label for="">Seleccionar cancion:</label>
+            <br>
+            <input type ="file" name="audio" id="audio"/>
             <br>
             <br>
-            <input type="submit" value="Añadir Cancion" class="btn">
+            <input type="submit" value="Añadir Cancion" class="btn" id="anadir">
 
         </form>
     </section>
 </body>
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+$("#fanadir").submit(function(){
+  var data = new FormData(this);
+ $.ajax({
+   url : '../php/anadirCancion.php',
+   type:'post',
+   data: data;
+   processData = false;
+   cache: false,
+   contentType = false;
+   success: function(){
+     window.location.assign('../html/AnadirCancion.html');
+     alert("Cancion añadida correctamente.");
+   }
+ });
+});
+</script>
