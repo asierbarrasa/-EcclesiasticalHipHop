@@ -7,36 +7,28 @@
     <link rel='stylesheet' type='text/css' href='../css/estilos.css' />
 </head>
 <body>
-      <h1>Ecclesiastical Hip Hop</h1>
-    <br>
-    <nav>
-        <ul>
-            <li><a href="AnadirCancion.html"><b>Añadir canción</b></a></li>
-            <li><a href="FiltrarCanciones.html">Tu biblioteca</a></li>
-            <li><a href="../php/getBiblioteca.php"id="globalmusic" >Toda la musica</a></li>
-        </ul>
-    </nav>
+     <h1>Ecclesiastical Hip Hop</h1>
     <section class="insertar">
         <form class="formulario" action="" method="" id="fanadir" enctype ="multipart/form-data ">
             <label for="">Titulo: </label>
             <br>
             <input type="text" id="titulo">
             <br>
-            <label>Artista: </label>
+            <label for="">Artista: </label>
             <br>
-            <input type="text" id="artista" >
+            <input type="text" id="artista">
             <br>
-            <label>Genero:</label>
+            <label for="">Genero:</label>
             <br>
             <input type="text" id="genero">
             <br>
-            <label>Año:</label>
+            <label for="">Año:</label>
             <br>
             <input type="text" id="ano">
             <br>
-            <label>Seleccionar cancion:</label>
+            <label for="">Seleccionar cancion:</label>
             <br>
-            <input type ="file" name="audio" id="audio"/>
+            <input type ="file" name="audio" id="audio">
             <br>
             <br>
             <input type="submit" value="Añadir Cancion" class="btn" id="anadir">
@@ -46,7 +38,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
 $("#fanadir").submit(function(){
-  var dataF = new FormData(this);
+  var dataF = new FormData();
+  var exp = $("#audio")[0].files;
+  console.log(exp);
+  dataF.append('audio', exp);
+  dataF.append('titulo', $("#titulo").val());
+  dataF.append('artista', $("#artista").val());
+  dataF.append('genero', $("#genero").val());
+  dataF.append('ano', $("#ano").val());
+
+  
  $.ajax({
    url : '../php/anadirCancion.php',
    type:'POST',
@@ -56,11 +57,9 @@ $("#fanadir").submit(function(){
    contentType: false,
    success: function(e){
      console.log(e);
-	 console.log(dataF);
-    //window.location.assign('../html/AnadirCancion.html');
+	//window.location.assign('../html/AnadirCancion.html');
    }
  });
- return false;
 });
 </script>
 </body>
