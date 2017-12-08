@@ -1,6 +1,7 @@
 <?php
 	if (isset($_POST['titulo'])){
-				if(empty($_POST['artista'])|| empty($_POST['genero'])|| empty($_POST['ano'] ||empty($_FILES["audio"]))){
+				if(empty($_POST['artista'])|| empty($_POST['genero'])|| empty($_POST['ano']) ||empty($_FILES["audio"]))
+				{
 					echo "Rellene todos los campos.";
 				}else{
               if (is_uploaded_file($_FILES["audio"]["tmp_name"])){
