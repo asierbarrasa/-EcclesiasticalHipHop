@@ -9,7 +9,7 @@
 <body>
      <h1>Ecclesiastical Hip Hop</h1>
     <section class="insertar">
-        <form class="formulario" action="" method="" id="fanadir" enctype ="multipart/form-data ">
+        <form class="formulario" action="" method="POST" id="fanadir" enctype ="multipart/form-data">
             <label for="">Titulo: </label>
             <br>
             <input type="text" id="titulo">
@@ -37,7 +37,8 @@
     </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
-$("#fanadir").submit(function(){
+$("#fanadir").submit(function(event){
+    event.preventDefault();
   var dataF = new FormData();
   var exp = $("#audio")[0].files;
   console.log(exp);
@@ -47,9 +48,9 @@ $("#fanadir").submit(function(){
   dataF.append('genero', $("#genero").val());
   dataF.append('ano', $("#ano").val());
 
-  
+
  $.ajax({
-   url : '../php/anadirCancion.php',
+   url : '../php/añadirCancion.php',
    type:'POST',
    data: dataF,
    processData: false,
