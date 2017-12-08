@@ -5,7 +5,7 @@
 					echo "Rellene todos los campos.";
 				}else{
               if (is_uploaded_file($_FILES["audio"]["tmp_name"])){
-                      $ruta = "../Users/$_SESSION[email]/$_FILES[audio][name]";
+                      $ruta = "../Users/$_SESSION['email']/$_FILES['audio']['name']";
                       move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
               }
 
