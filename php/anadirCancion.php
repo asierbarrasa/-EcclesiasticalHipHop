@@ -1,18 +1,21 @@
 <?php
    session_start();
-   print_r($_FILES["audio"]);
-	if (isset($_POST['titulo'])){
-				if(empty($_POST['artista']) || empty($_POST['genero'])|| empty($_POST['ano']) ||empty($_FILES["audio"])
+
+	if (isset($_POST["titulo"])){
+				if(empty($_POST["artista"]) || empty($_POST["genero"])|| empty($_POST["ano"])
 				)
 				{
-					echo "Rellene todos los campos.";
+				    echo "Error";
+
 				}else{
+
 				    $date = date("Ymdhis");
-              if (is_uploaded_file($_FILES["audio"]["tmp_name"])){
-                      $ruta = "../Users/$_SESSION[email]/".$date.".mp3";
-                      move_uploaded_file($_FILES["audio"]["tmp_name"],$ruta);
+              if (is_uploaded_file($_FILES['audio']['tmp_name'])){
+                      $ruta = "../Users/".$_SESSION['email']."/".$date.".mp3";
+                      move_uploaded_file($_FILES['audio']['tmp_name'],$ruta);
+
               }else{
-                  echo "falla";
+                  echo "Error";
               }
 
     					$xml = simplexml_load_file('../Users/'.$_SESSION["email"].'/canciones.xml');
@@ -47,6 +50,7 @@
               $path = $cancion -> addChild('path','../Users/'.$_SESSION["email"].'/'.$date.'.mp3');
 
     					$xml2->asXML('../xml/canciones.xml');
+    					die("Correcto");
 				}
 			}
 			echo "Error";

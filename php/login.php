@@ -12,11 +12,11 @@ if(mysqli_num_rows($result)==1){
     echo "Correcto";
   }
   else{
-      echo "Hola holita vecinito";
+      echo "Error";
    // die("Error");
   }
 
 }else{
-  echo "no existe";
+  echo "Error";
 }
 ?>

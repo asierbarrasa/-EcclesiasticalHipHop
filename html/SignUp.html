@@ -18,6 +18,7 @@
             <br><br>
             <input type="submit" value="Registrarse" class="btn">
         </form>
+        <div id="response"></div>
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -38,7 +39,46 @@
           cache: false,
           contentType: false,
           success: function(e){
-              console.log(e);
+              switch(e){
+                case "Correcto":
+                  $.ajax({
+                    var dataForm = new FormData();
+                    dataForm.append('email', $("#email").val());
+                    dataForm.append('pass', $("#pass1").val());
+                    $.ajax({
+                        url: '../php/login.php',
+                        type: 'POST',
+                        data: dataForm,
+                        processData: false,
+                        cache: false,
+                        contentType: false,
+                        success: function(e){
+                            switch(e){
+                              case "Correcto":
+                                $(location).attr('href','index.html');
+                                break;
+                              case "Error":
+                                $("#response").html("<strong>Usuario o contraseña incorrecto.</strong>");
+                                break;
+                              default:
+                                $("#response").html("<strong>Ha ocurrido un error con el servidor.</strong>");
+                                break;
+                            }
+                          }
+                  });
+
+                case "Error1":
+                  $("#response").html("<strong>Email ya en uso.</strong>");
+                  break;
+                case "Error2":
+                $("#response").html("<strong>Error, no se ha podido completar el registro.</strong>");
+                break;
+                default:
+                $("#response").html("<strong>Error del servior.</strong>");
+                break;
+
+
+              }
              }
         });
       }

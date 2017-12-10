@@ -6,7 +6,7 @@ $veri = "Select * from Users where email = '".$email."'";
 $result = mysqli_query($link, $veri);
 $row = mysqli_fetch_assoc($result);
 if(mysqli_num_rows ($result)==1){
-  die("Email en uso.");
+  die("Error1");
 }
 $path = "../Users/$email";
 if (!file_exists($path)) {
@@ -24,9 +24,9 @@ $sql = "INSERT INTO Users(email,pass,path) VALUES ('".$_POST["email"]
 
 if(!mysqli_query($link, $sql))
 {
-  die('Error al crear el usuario');
+  die('Error2');
 }
 
-echo "Usuario registrado correctamente";
+echo "Correcto";
 
 ?>

@@ -34,6 +34,7 @@
             <input type="submit" value="Añadir Cancion" class="btn" id="anadir">
 
         </form>
+        <div id="response"></div>
     </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
@@ -55,11 +56,36 @@ $("#fanadir").submit(function(event){
    cache: false,
    contentType: false,
    success: function(e){
-     console.log(e);
-	//window.location.assign('../html/AnadirCancion.html');
+     switch(e){
+         case "Correcto":
+             $("#response").html("<strong>Cancion añadida correctamente.</strong>");
+             $("#fañadir")[0].reset;
+             break;
+
+         default:
+	   $("#response").html("<strong>Cancion añadida correctamente.</strong>");
+	   $("#fañadir")[0].reset
+	   break;
+     }
    }
  });
 });
+
+$(document).ready(function(){
+            $.ajax({
+                url:"../php/seguridad.php",
+                type:'POST',
+                success: function(e){
+                    switch(e){
+                        case "Si":
+                            break;
+                        default:
+                            $(location).attr("href","../index.html");
+                            break;
+                    }
+                }
+            });
+        });
 </script>
 </body>
 </html>

@@ -12,8 +12,8 @@
     <nav>
         <ul>
             <li><a href="AnadirCancion.html">Añadir canción</a></li>
-            <li><a href="Filtrarcanciones.html">Tu biblioteca</a></li>
-            <li><a href="../php/getBiblioteca.php" id="globalmusic" >Toda la musica</a></li>
+            <li><a href="../php/getBiblioteca.php" id="localmusic">Tu biblioteca</a></li>
+            <li><a href="../php/getlistaCanciones.php" id="globalmusic" >Toda la musica</a></li>
         </ul>
     </nav>
 
@@ -25,8 +25,8 @@
     </section>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script>
-            $("#globalmusic").click(function(){
-                console.log("Entra");
+            $("#globalmusic").click(function(event){
+                event.preventDefault();
                 $.ajax({
                     url:"/php/getListaCanciones.php",
                     type:'POST',
@@ -35,6 +35,31 @@
                     }
                 });
             });
+            $("#localmusic").click(function(event){
+                event.preventDefault();
+                $.ajax({
+                    url:"/php/getBiblioteca.php",
+                    type:'POST',
+                    success: function(e){
+                        $("#res").html(e);
+                    }
+                });
+            });
+        $(document).ready(function(){
+            $.ajax({
+                url:"../php/seguridad.php",
+                type:'POST',
+                success: function(e){
+                    switch(e){
+                        case "Si":
+                            break;
+                        default:
+                            $(location).attr("href","../index.html");
+                            break;
+                    }
+                }
+            });
+        });
         </script>
 </body>
 </html>

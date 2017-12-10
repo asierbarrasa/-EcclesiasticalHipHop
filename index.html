@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel='stylesheet' type='text/css' href='/css/estilos.css' />
+    <link rel='stylesheet' type='text/css' href='../css/estilos.css' />
 </head>
 <body>
     <h1>Ecclesiastical Hip Hop</h1>
@@ -13,11 +13,13 @@
             <label>Correo: </label><br><input type="text" name="email" id="email">
             <br>
             <label>Contraseña: </label><br><input type="password" name="pass" id="pass1">
-          <br>  <br>Aun no estas registrado? Haz click <a href="html/SignUp.html"><b>aquí</b></a><br>
+          <br>  <br>Aun no estas registrado? Haz click <a href="SignUp.html"><b>aquí</b></a><br>
             <br>
 
             <input type="submit" value="Entrar" class="btn" id="btn">
         </form>
+      </br>
+      <div id="response"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script>
     $("#flogin").submit(function() {
@@ -28,15 +30,28 @@
           console.log("Aqui");
           $.ajax({
 
-              url: 'php/login.php',
+              url: './php/login.php',
               type: 'POST',
               data: dataForm,
               processData: false,
               cache: false,
               contentType: false,
               success: function(e){
-                  console.log(e);
+                  switch(e){
+                    case "Correcto":
+                      $(location).attr('href','./html/index.html');
+                      break;
+                    case "Error":
+                      $("#response").html("<strong>Usuario o contraseña incorrecto.</strong>");
+                      break;
+                    default:
+                      $("#response").html("<strong>Ha ocurrido un error con el servidor.</strong>");
+                      break;
+
+
+                  }
                  }
+
           });
          return false;
 

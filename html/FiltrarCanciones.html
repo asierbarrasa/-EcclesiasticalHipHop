@@ -12,20 +12,54 @@
     <nav>
         <ul>
             <li><a href="AnadirCancion.html">Añadir canción</a></li>
+            <li><a href="./index.html" >Inicio</a></li>
             <li><a href="FiltrarCanciones.html"><b>Tu biblioteca</b></a></li>
-            <li><a href="../php/getBiblioteca.php"id="globalmusic" >Toda la musica</a></li>
+
         </ul>
     </nav>
-        <form class="formulario" action="" method="" >
-            <label>Titulo: </label><br><input type="text">
+        <form class="formulario" action="" method="" name="fm" id="fm" >
+            <label>Titulo: </label><br><input type="text" name="titulo">
             <br>
-            <label >Artista: </label><br><input type="text">
+            <label >Artista: </label><br><input type="text" name="artista">
             <br>
-            <label>Genero:</label><br><input type="text">
+            <label>Genero:</label><br><input type="text" name="genero">
             <br>
-            <label>Año:</label><br><input type="text">
+            <label>Año:</label><br><input type="text" name="ano">
             <br><br>
-            <input type="submit" value="Filtrar Canciones" class="btn">
+            <input type="button" value="Filtrar Canciones" class="btn" onclick="devolverCanciones()">
         </form>
+		<div id="aqui" name="aqui">Aqui apareceran las canciones</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+			<script>
+				function devolverCanciones(){
+					var cadena = $("#fm").serialize();
+					var xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+					 if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("aqui").innerHTML = this.responseText;
+					}
+					};
+				xhttp.open("POST", "../php/devolverCanciones.php", true);
+				xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				xhttp.send(cadena);
+				}
+
+				$(document).ready(function(){
+            $.ajax({
+                url:"../php/seguridad.php",
+                type:'POST',
+                success: function(e){
+                    switch(e){
+                        case "Si":
+                            break;
+                        default:
+                            $(location).attr("href","../index.html");
+                            break;
+                    }
+                }
+            });
+        });
+
+			</script>
 </body>
 </html>
