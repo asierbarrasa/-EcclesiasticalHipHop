@@ -62,7 +62,7 @@ echo  '<script>$("audio").bind("play", function() {
 
     $cont = 0;
     $xml = simplexml_load_file("../xml/canciones.xml");
-    echo '<table border=1> <tr> <th> Nombre </th> <th> Artista </th>'
+    echo '<table border=1> <tr> <th> Titulo </th> <th> Artista </th>'
     .'<th> Genero </th><th> Año </th><th> Reproducir </th></tr>';
     foreach($xml->xpath($criterios) as $cancion){
     $cont = $cont +1;
