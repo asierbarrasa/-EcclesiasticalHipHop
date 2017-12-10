@@ -58,7 +58,7 @@ echo  '<script>$("audio").bind("play", function() {
          }
     }
     $criterios .=']';
-
+    
 
     $cont = 0;
     $xml = simplexml_load_file("../xml/canciones.xml");

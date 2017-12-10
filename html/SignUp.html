@@ -57,7 +57,7 @@
                         success: function(e){
                             switch(e){
                               case "Correcto":
-                                $(location).attr('href','index.html');
+                                $(location).attr('href','Intro.html');
                                 break;
                               case "Error":
                                 $("#response").html("<strong>Usuario o contraseña incorrecto.</strong>");
@@ -67,10 +67,10 @@
                                 break;
                             }
                           }
-
+                    
                   });
                   break;
-
+                  
 
                 case "Error1":
                   $("#response").html("<strong>Email ya en uso.</strong>");

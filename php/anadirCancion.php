@@ -1,19 +1,19 @@
 <?php
    session_start();
-
+   
 	if (isset($_POST["titulo"])){
 				if(empty($_POST["artista"]) || empty($_POST["genero"])|| empty($_POST["ano"])
 				)
 				{
 				    echo "Error";
-
+					
 				}else{
-
+				    
 				    $date = date("Ymdhis");
               if (is_uploaded_file($_FILES['audio']['tmp_name'])){
                       $ruta = "../Users/".$_SESSION['email']."/".$date.".mp3";
                       move_uploaded_file($_FILES['audio']['tmp_name'],$ruta);
-
+                      
               }else{
                   echo "Error";
               }
