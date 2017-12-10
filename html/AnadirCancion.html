@@ -8,31 +8,28 @@
 </head>
 <body>
      <h1>Ecclesiastical Hip Hop</h1>
+     <br>
+     <nav>
+         <ul>
+             <li><a href="Intro.html">Inicio</a></li>
+             <li><a href="AnadirCancion.html"><b>Añadir canción</b></a></li>
+             <li><a href="../php/getBiblioteca.php">Toda la música</a></li>
+             <li><a href="../index.html"><i>LogOut</i></a></li>
+         </ul>
+     </nav>
     <section class="insertar">
-        <form class="formulario" action="" method="" id="fanadir" enctype ="">
-            <label for="">Titulo: </label>
+        <form class="formulario"  id="fanadir" >
+            <label >Titulo: </label><br><input type="text" id="titulo" required>
             <br>
-            <input type="text" id="titulo" required>
+            <label >Artista: </label><br><input type="text" id="artista" required>
             <br>
-            <label for="">Artista: </label>
+            <label >Genero:</label><br><input type="text" id="genero" required>
             <br>
-            <input type="text" id="artista" required>
+            <label >Año:</label><br><input type="text" id="ano" required>
             <br>
-            <label for="">Genero:</label>
-            <br>
-            <input type="text" id="genero" required>
-            <br>
-            <label for="">Año:</label>
-            <br>
-            <input type="text" id="ano" required>
-            <br>
-            <label for="">Seleccionar cancion:</label>
-            <br>
-            <input type ="file" name="audio" id="audio" required>
-            <br>
-            <br>
+            <label >Seleccionar cancion:</label><br><input type ="file" name="audio" id="audio" required>
+            <br><br>
             <input type="submit" value="Añadir Cancion" class="btn" id="anadir">
-
         </form>
         <br>
         <div id="response"></div>

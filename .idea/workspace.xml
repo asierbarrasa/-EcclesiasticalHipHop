@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c52a113d-c9cd-4b51-bdd3-21a697a360f0" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/php/control.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/html/AnadirCancion.html" afterPath="$PROJECT_DIR$/html/AnadirCancion.html" />
+      <change beforePath="$PROJECT_DIR$/html/FiltrarCanciones.html" afterPath="$PROJECT_DIR$/html/FiltrarCanciones.html" />
+      <change beforePath="$PROJECT_DIR$/html/Intro.html" afterPath="$PROJECT_DIR$/html/Intro.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,9 +19,41 @@
       <file leaf-file-name="FiltrarCanciones.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/FiltrarCanciones.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+            <state relative-caret-position="306">
+              <caret line="18" column="10" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="18" selection-end-column="10" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnadirCancion.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/AnadirCancion.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="63" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="estilos.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/estilos.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1564">
+              <caret line="92" column="1" lean-forward="true" selection-start-line="92" selection-start-column="1" selection-end-line="92" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Intro.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/html/Intro.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1512911052424" expanded="true" signature="2107:2116" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -36,34 +70,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/login.php">
+      <file leaf-file-name="anadirCancion.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/anadirCancion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-478">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="estilos.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/estilos.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1819">
-              <caret line="107" column="17" lean-forward="false" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Intro.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/Intro.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-              <folding>
-                <marker date="1512909394882" expanded="true" signature="2044:2053" ph="{...}" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -78,7 +90,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="control.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="control.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/control.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
@@ -88,12 +100,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web-forms.rnc" pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/web-forms.rnc">
+      <file leaf-file-name="getBiblioteca.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/getBiblioteca.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10217">
-              <caret line="601" column="22" lean-forward="false" selection-start-line="601" selection-start-column="22" selection-end-line="601" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1512908634452" expanded="true" signature="665:817" ph="..." />
+                <marker date="1512908634452" expanded="true" signature="701:807" ph="{...}" />
+                <marker date="1512908634452" expanded="true" signature="758:803" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="devolverCanciones.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/devolverCanciones.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1512908634444" expanded="true" signature="719:871" ph="..." />
+                <marker date="1512908634444" expanded="true" signature="755:861" ph="{...}" />
+                <marker date="1512908634444" expanded="true" signature="812:857" ph="{...}" />
+                <marker date="1512908634444" expanded="true" signature="2526:2678" ph="..." />
+                <marker date="1512908634444" expanded="true" signature="2562:2668" ph="{...}" />
+                <marker date="1512908634444" expanded="true" signature="2619:2664" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,9 +141,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/html/index.html" />
-        <option value="$PROJECT_DIR$/html/FiltrarCanciones.html" />
         <option value="$PROJECT_DIR$/html/SignUp.html" />
         <option value="$PROJECT_DIR$/php/control.php" />
+        <option value="$PROJECT_DIR$/html/FiltrarCanciones.html" />
+        <option value="$PROJECT_DIR$/html/AnadirCancion.html" />
+        <option value="$PROJECT_DIR$/html/Intro.html" />
       </list>
     </option>
   </component>
@@ -147,6 +182,11 @@
             <path>
               <item name="ECCLHipHop" type="b2602c69:ProjectViewProjectNode" />
               <item name="ECCLHipHop" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ECCLHipHop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ECCLHipHop" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ECCLHipHop" type="b2602c69:ProjectViewProjectNode" />
@@ -309,7 +349,7 @@
       <workItem from="1512588473749" duration="409000" />
       <workItem from="1512752927702" duration="204000" />
       <workItem from="1512908585970" duration="142000" />
-      <workItem from="1512909183407" duration="349000" />
+      <workItem from="1512909183407" duration="1902000" />
     </task>
     <task id="LOCAL-00001" summary="index y login modificados">
       <created>1512753129157</created>
@@ -318,11 +358,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512753129157</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="control">
+      <created>1512909542406</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1512909542406</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1104000" />
+    <option name="totallyTimeSpent" value="2657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -356,7 +403,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="index y login modificados" />
-    <option name="LAST_COMMIT_MESSAGE" value="index y login modificados" />
+    <MESSAGE value="control" />
+    <option name="LAST_COMMIT_MESSAGE" value="control" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -402,7 +450,7 @@
         <state relative-caret-position="204">
           <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
           <folding>
-            <marker date="1512909394882" expanded="true" signature="2044:2053" ph="{...}" />
+            <marker date="1512911052424" expanded="true" signature="2107:2116" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -462,7 +510,7 @@
         <state relative-caret-position="204">
           <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
           <folding>
-            <marker date="1512909394882" expanded="true" signature="2044:2053" ph="{...}" />
+            <marker date="1512911052424" expanded="true" signature="2107:2116" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -505,7 +553,7 @@
         <state relative-caret-position="204">
           <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
           <folding>
-            <marker date="1512909394882" expanded="true" signature="2044:2053" ph="{...}" />
+            <marker date="1512911052424" expanded="true" signature="2107:2116" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -536,36 +584,97 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/Login.html" />
-    <entry file="file://$PROJECT_DIR$/css/estilos.css">
+    <entry file="file://$PROJECT_DIR$/php/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1819">
-          <caret line="107" column="17" lean-forward="false" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/Intro.html">
+    <entry file="file://$PROJECT_DIR$/php/getListaCanciones.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1512909394882" expanded="true" signature="2044:2053" ph="{...}" />
+            <marker date="1512908634487" expanded="true" signature="601:753" ph="..." />
+            <marker date="1512908634487" expanded="true" signature="637:743" ph="{...}" />
+            <marker date="1512908634487" expanded="true" signature="694:739" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/anadirCancion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-478">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/SignUp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/estilos.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="92" column="1" lean-forward="true" selection-start-line="92" selection-start-column="1" selection-end-line="92" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/FiltrarCanciones.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        <state relative-caret-position="306">
+          <caret line="18" column="10" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="18" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/login.php">
+    <entry file="file://$PROJECT_DIR$/php/getBiblioteca.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1512908634452" expanded="true" signature="665:817" ph="..." />
+            <marker date="1512908634452" expanded="true" signature="701:807" ph="{...}" />
+            <marker date="1512908634452" expanded="true" signature="758:803" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/devolverCanciones.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1512908634444" expanded="true" signature="719:871" ph="..." />
+            <marker date="1512908634444" expanded="true" signature="755:861" ph="{...}" />
+            <marker date="1512908634444" expanded="true" signature="812:857" ph="{...}" />
+            <marker date="1512908634444" expanded="true" signature="2526:2678" ph="..." />
+            <marker date="1512908634444" expanded="true" signature="2562:2668" ph="{...}" />
+            <marker date="1512908634444" expanded="true" signature="2619:2664" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/control.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="79" lean-forward="false" selection-start-line="3" selection-start-column="79" selection-end-line="3" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/AnadirCancion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="63" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="63" />
           <folding />
         </state>
       </provider>
@@ -580,19 +689,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/SignUp.html">
+    <entry file="file://$PROJECT_DIR$/html/Intro.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/control.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="79" lean-forward="false" selection-start-line="3" selection-start-column="79" selection-end-line="3" selection-end-column="79" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1512911052424" expanded="true" signature="2107:2116" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
