@@ -11,9 +11,9 @@
     <br>
     <nav>
         <ul>
-            <li><a href="Intro.html" >Inicio</a></li>
+
             <li><a href="AnadirCancion.html">Añadir canción</a></li>
-            <li><a href="../php/getBiblioteca.php"><b>Toda la música</b></a></li>
+            <li><a href="Intro.html" >Inicio</a></li>
             <li><a href="../php/logOut.php"><i>LogOut</i></a></li>
         </ul>
     </nav>
@@ -32,7 +32,17 @@
 		<div id="aqui" name="aqui">Aqui apareceran las canciones</div>
   </section>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
 			<script>
+				document.addEventListener('play', function(e){
+				    var audios = document.getElementsByTagName('audio');
+				    for (var i=0, len = audios.length; i< len; i++){
+				        if(audios[i]!= e.target){
+				            audios[i].pause();
+				        }
+				    }
+				},true);
+
 				function devolverCanciones(){
 					var cadena = $("#fm").serialize();
 					var xhttp = new XMLHttpRequest();
@@ -63,5 +73,6 @@
         });
 
 			</script>
+
 </body>
 </html>
