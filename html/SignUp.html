@@ -10,7 +10,7 @@
      <h1>Ecclesiastical Hip Hop</h1>
     <section class="insertar">
         <form class="formulario" id="form" action="" method="">
-            <label>Correo: </label><br><input type="email" name="email" required>
+            <label>Correo: </label><br><input type="email" name="email" id="email" required>
             <br>
             <label>Contraseña: </label><br><input type="password" id="pass" name="pass" required>
             <br>
@@ -24,8 +24,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>
 
-    $("#form").submit(function(){
-
+    $("#form").submit(function(event){
+        event.preventDefault();
       if($("#pass").val().length < 6){
         alert("La contraseña tiene que ser mayor de 6 caracteres");
       }
@@ -41,10 +41,9 @@
           success: function(e){
               switch(e){
                 case "Correcto":
-                  $.ajax({
                     var dataForm = new FormData();
                     dataForm.append('email', $("#email").val());
-                    dataForm.append('pass', $("#pass1").val());
+                    dataForm.append('pass', $("#pass").val());
                     $.ajax({
                         url: '../php/login.php',
                         type: 'POST',
@@ -65,7 +64,10 @@
                                 break;
                             }
                           }
+
                   });
+                  break;
+
 
                 case "Error1":
                   $("#response").html("<strong>Email ya en uso.</strong>");
