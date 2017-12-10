@@ -14,7 +14,7 @@
             <br>
             <label>Contraseña: </label><br><input type="password" id="pass" name="pass" required>
             <br>
-            <label>Repetir Contraseña:</label><br><input type="password" required>
+            <label>Repetir Contraseña:</label><br><input type="password" id="pass2" required>
             <br><br>
             <input type="submit" value="Registrarse" class="btn">
         </form>
@@ -28,6 +28,9 @@
         event.preventDefault();
       if($("#pass").val().length < 6){
         alert("La contraseña tiene que ser mayor de 6 caracteres");
+      }
+      else if($("#pass").val()!=$("#pass2").val()){
+          alert("Las contraseñas no coinciden.")
       }
       else{
         var data = new FormData(this);
