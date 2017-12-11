@@ -2,12 +2,11 @@
 
     if (empty($_POST['ano']) and empty($_POST['autor']) and empty($_POST['genero']) and empty($_POST['titulo'])){
    $xml = simplexml_load_file("../xml/canciones.xml");
-echo '<div class=centrado>';
+echo '<div class="centrado">';
 echo '<table border=1> <tr> <th> Titulo </th> <th> Artista </th>'
     .'<th> Genero </th><th> A&ntilde;o </th><th> Reproducir </th></tr>';
-echo '</div>'
+echo '</div>';
 
-echo '<div class=centrado>';
 foreach($xml->xpath('//cancion') as $cancion){
 
     echo '<tr><td>'.$cancion->titulo.'</td><td>'.$cancion->artista.'</td><td>'.$cancion->genero.'</td><td>'.$cancion->ano.'</td><td>'
