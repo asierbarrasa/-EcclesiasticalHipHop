@@ -21,7 +21,7 @@ echo '<!DOCTYPE html>
 <li><a href="../html/FiltrarCanciones.html">Toda la musica</a></li>
 <li><a href="logOut.php"><i>LogOut</i></a></li>
 </ul>
-<div class=centrado>';
+<div class="centrado">';
 echo '<table border=1 > <tr> <th> Titulo </th> <th> Artista </th>'
     .'<th> Genero </th><th> A&ntilde;o </th><th> Reproducir </th></tr>';
 echo '</div>
