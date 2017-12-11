@@ -5,7 +5,6 @@
 echo '<div class="centrado">';
 echo '<table border=1> <tr> <th> Titulo </th> <th> Artista </th>'
     .'<th> Genero </th><th> A&ntilde;o </th><th> Reproducir </th></tr>';
-echo '</div>';
 
 foreach($xml->xpath('//cancion') as $cancion){
 
@@ -15,7 +14,7 @@ foreach($xml->xpath('//cancion') as $cancion){
 
 
 echo '</table>';
-echo '</div>'
+echo '</div>';
 
 echo ' <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>';
 echo  '<script>$("audio").bind("play", function() {
