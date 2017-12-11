@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Document</title>
+<title>Ecclesiastical Hip Hop</title>
 <link rel='stylesheet' type='text/css' href='../css/estilos.css' />
 </head>
 <body>
@@ -39,7 +39,6 @@ $("#fanadir").submit(function(event){
  dataF.append("genero",$("#genero").val());
  dataF.append("ano",$("#ano").val());
  dataF.append("audio",$("#audio")[0].files[0]);
- console.log(dataF.entries())
 
 $.ajax({
   url :'../php/anadirCancion.php',
@@ -53,12 +52,13 @@ $.ajax({
         case "Correcto":
             $("#response").html("<strong>Cancion a&ntilde;adida correctamente.<\/strong>");
             $("#fanadir")[0].reset();
-            $(location).attr("href","../html/intro.html");
+            $(location).attr("href","Intro.html");
             break;
 
         default:
           $("#response").html("<strong>Cancion a&ntilde;adida correctamente.<\/strong>");
           $("#fanadir")[0].reset();
+          $(location).attr("href","Intro.html");
           break;
     }
   }
