@@ -15,12 +15,28 @@
 <li><a href="../html/FiltrarCanciones.html">Toda la musica</a></li>
 <li><a href="logOut.php"><i>LogOut</i></a></li>
 </ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript">
+</script><script type="text/javascript">
+//<![CDATA[
+       $(document).ready(function(){
+           $.ajax({
+               url:"../php/seguridad.php",
+               type:'POST',
+               success: function(e){
+                   switch(e){
+                       case "Si":
+                           break;
+                       default:
+                           $(location).attr("href","../index.html");
+                           break;
+                   }
+               }
+           });
+       });
+//]]>
+</script>
 </body>
 </html>
-
-
-
-
 
 <?php
 session_start();
@@ -36,7 +52,6 @@ foreach($xml->xpath('//cancion') as $cancion){
     .'<audio controls><source src="'.$cancion->path.'" type="audio/mpeg"></audio></td></tr>';
 }
 
-
 echo '</table>';
 
 echo ' <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>';
@@ -46,6 +61,4 @@ echo  '<script>$("audio").bind("play", function() {
     if(this != activated) this.pause();
   });
 });</script>';
-
-
  ?>

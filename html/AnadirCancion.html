@@ -52,12 +52,13 @@ $.ajax({
     switch(e){
         case "Correcto":
             $("#response").html("<strong>Cancion a&ntilde;adida correctamente.<\/strong>");
-            $("#faÃ±adir")[0].reset();
+            $("#fanadir")[0].reset();
+            $(location).attr("href","../html/intro.html");
             break;
 
         default:
           $("#response").html("<strong>Cancion a&ntilde;adida correctamente.<\/strong>");
-          $("#faÃ±adir")[0].reset();
+          $("#fanadir")[0].reset();
           break;
     }
   }
@@ -73,7 +74,7 @@ $(document).ready(function(){
                        case "Si":
                            break;
                        default:
-                          // $(location).attr("href","../index.html");
+                            $(location).attr("href","../index.html");
                            break;
                    }
                }
@@ -83,6 +84,3 @@ $(document).ready(function(){
 </script>
 </body>
 </html>
- 
-
-
