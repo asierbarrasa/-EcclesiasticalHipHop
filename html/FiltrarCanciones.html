@@ -1,78 +1,73 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel='stylesheet' type='text/css' href='../css/estilos.css' />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Document</title>
+<link rel='stylesheet' type='text/css' href='../css/estilos.css' />
 </head>
 <body>
-      <h1>Ecclesiastical Hip Hop</h1>
-    <br>
-    <nav>
-        <ul>
+<a href="Intro.html"><h1>Ecclesiastical Hip Hop</h1></a>
 
-            <li><a href="AnadirCancion.html">Añadir canción</a></li>
-            <li><a href="Intro.html" >Inicio</a></li>
-            <li><a href="../php/logOut.php"><i>LogOut</i></a></li>
-        </ul>
-    </nav>
-        <form class="formulario" action="" method="" name="fm" id="fm" >
-            <label>Titulo: </label><br><input type="text" name="titulo">
-            <br>
-            <label >Artista: </label><br><input type="text" name="artista">
-            <br>
-            <label>Genero:</label><br><input type="text" name="genero">
-            <br>
-            <label>Año:</label><br><input type="text" name="ano">
-            <br><br>
-            <input type="button" value="Filtrar Canciones" class="btn" onclick="devolverCanciones()">
-        </form>
-		<section class="insertar" id="mainSection">
-		<div id="aqui" name="aqui">Aqui apareceran las canciones</div>
-  </section>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<br />
+<ul>
+<li><a href="../php/getBiblioteca.php" >Tu biblioteca</a></li>
+<li><a href="AnadirCancion.html">A&ntilde;adir canci&oacute;n</a></li>
+<li><a href="FiltrarCanciones.html">Toda la musica</a></li>
+<li><a href="../php/logOut.php"><i>LogOut</i></a></li>
+</ul>
+<form class="formulario" name="fm" id="fm"><label>Titulo:</label><br />
+<input type="text" name="titulo" /><br />
+<label>Artista:</label><br />
+<input type="text" name="artista" /><br />
+<label>Genero:</label><br />
+<input type="text" name="genero" /><br />
+<label>A&ntilde;o:</label><br />
+<input type="text" name="ano" /><br />
+<br />
+<input type="button" value="Filtrar Canciones" class="btn" onclick="devolverCanciones()" /></form>
+<div id="aqui">Aqui apareceran las canciones</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript">
+</script><script type="text/javascript">
+//<![CDATA[
+                               document.addEventListener('play', function(e){
+                                   var audios = document.getElementsByTagName('audio');
+                                   for (var i=0, len = audios.length; i< len; i++){
+                                       if(audios[i]!= e.target){
+                                           audios[i].pause();
+                                       }
+                                   }
+                               },true);
 
-			<script>
-				document.addEventListener('play', function(e){
-				    var audios = document.getElementsByTagName('audio');
-				    for (var i=0, len = audios.length; i< len; i++){
-				        if(audios[i]!= e.target){
-				            audios[i].pause();
-				        }
-				    }
-				},true);
+                               function devolverCanciones(){
+                                       var cadena = $("#fm").serialize();
+                                       var xhttp = new XMLHttpRequest();
+                                       xhttp.onreadystatechange = function() {
+                                        if (this.readyState == 4 && this.status == 200) {
+                                       document.getElementById("aqui").innerHTML = this.responseText;
+                                       }
+                                       };
+                               xhttp.open("POST", "../php/devolverCanciones.php", true);
+                               xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                               xhttp.send(cadena);
+                               }
 
-				function devolverCanciones(){
-					var cadena = $("#fm").serialize();
-					var xhttp = new XMLHttpRequest();
-					xhttp.onreadystatechange = function() {
-					 if (this.readyState == 4 && this.status == 200) {
-					document.getElementById("aqui").innerHTML = this.responseText;
-					}
-					};
-				xhttp.open("POST", "../php/devolverCanciones.php", true);
-				xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-				xhttp.send(cadena);
-				}
+                               $(document).ready(function(){
+           $.ajax({
+               url:"../php/seguridad.php",
+               type:'POST',
+               success: function(e){
+                   switch(e){
+                       case "Si":
+                           break;
+                       default:
+                           //$(location).attr("href","../index.html");
+                           break;
+                   }
+               }
+           });
+       });
 
-				$(document).ready(function(){
-            $.ajax({
-                url:"../php/seguridad.php",
-                type:'POST',
-                success: function(e){
-                    switch(e){
-                        case "Si":
-                            break;
-                        default:
-                            $(location).attr("href","../index.html");
-                            break;
-                    }
-                }
-            });
-        });
-
-			</script>
-
+//]]>
+</script>
 </body>
 </html>

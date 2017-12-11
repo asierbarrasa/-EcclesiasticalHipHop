@@ -30,7 +30,7 @@ echo  '<script>$("audio").bind("play", function() {
     }
 
     if (!empty($_POST['autor'])){
-        $autor = $_POST['autor'];
+        $autor = strtolower($_POST['autor']);
         if(empty($criterios)){
         echo ("Criterio esta vacio, se empieza");
         $criterios = "/canciones/cancion[autor='".$autor."'";
@@ -41,7 +41,7 @@ echo  '<script>$("audio").bind("play", function() {
 
 
      if (!empty($_POST['genero'])){
-        $genero = $_POST['genero'];
+        $genero = strtolower($_POST['genero']);
         if(empty($criterios)){
             $criterios = "/canciones/cancion[genero='".$genero."'";
         } else {
@@ -50,7 +50,7 @@ echo  '<script>$("audio").bind("play", function() {
     }
 
     if (!empty($_POST['titulo'])){
-        $titulo = $_POST['titulo'];
+        $titulo = strtolower($_POST['titulo']);
          if(empty($criterios)){
             $criterios = "/canciones/cancion[titulo='".$titulo."'";
          }else{

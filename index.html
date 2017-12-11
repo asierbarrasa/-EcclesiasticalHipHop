@@ -1,63 +1,61 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel='stylesheet' type='text/css' href='../css/estilos.css' />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Document</title>
+<link rel='stylesheet' type='text/css' href='./css/estilos.css' />
 </head>
 <body>
-    <h1>Ecclesiastical Hip Hop</h1>
-    <section class="insertar">
-        <form class="formulario" action="" method="post" id="flogin" name="flogin" enctype="multipart/form-data">
-            <label>Correo: </label><br><input type="text" name="email" id="email">
-            <br>
-            <label>Contraseña: </label><br><input type="password" name="pass" id="pass1">
-          <br>  <br>Aun no estas registrado? Haz click <a href="./html/SignUp.html"><b>aquí</b></a><br>
-            <br>
+<h1>Ecclesiastical Hip Hop</h1>
+<form class="formulario" method="post" id="flogin" name="flogin" enctype="multipart/form-data"><label>Correo:</label><br />
+<input type="text" name="email" id="email" /><br />
+<label>Contrase&ntilde;a:</label><br />
+<input type="password" name="pass" id="pass1" /><br />
+<br />
+Aun no estas registrado? Haz click <a href="/html/SignUp.html"><b>aqu&iacute;</b></a><br />
+<br />
+<input type="submit" value="Entrar" class="btn" id="btn" /></form>
+<br />
+<div id="response"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript">
+</script><script type="text/javascript">
+//<![CDATA[
+   $("#flogin").submit(function() {
 
-            <input type="submit" value="Entrar" class="btn" id="btn">
-        </form>
-      <br>
-      <div id="response"></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script>
-    $("#flogin").submit(function() {
+         var dataForm = new FormData();
+         dataForm.append('email', $("#email").val());
+         dataForm.append('pass', $("#pass1").val());
+         console.log("Aqui");
+         $.ajax({
 
-          var dataForm = new FormData();
-          dataForm.append('email', $("#email").val());
-          dataForm.append('pass', $("#pass1").val());
-          console.log("Aqui");
-          $.ajax({
-
-              url: './php/login.php',
-              type: 'POST',
-              data: dataForm,
-              processData: false,
-              cache: false,
-              contentType: false,
-              success: function(e){
-                  switch(e){
-                    case "Correcto":
-                      $(location).attr('href','./html/Intro.html');
-                      break;
-                    case "Error":
-                      $("#response").html("<strong>Usuario o contraseña incorrecto.</strong>");
-                      break;
-                    default:
-                      $("#response").html("<strong>Ha ocurrido un error con el servidor.</strong>");
-                      break;
+             url: './php/login.php',
+             type: 'POST',
+             data: dataForm,
+             processData: false,
+             cache: false,
+             contentType: false,
+             success: function(e){
+                 switch(e){
+                   case "Correcto":
+                     $(location).attr('href','./html/Intro.html');
+                     break;
+                   case "Error":
+                     $("#response").html("<strong>Usuario o contrase&ntilde;a incorrecto.<\/strong>");
+                     break;
+                   default:
+                     $("#response").html("<strong>Ha ocurrido un error con el servidor.<\/strong>");
+                     break;
 
 
-                  }
                  }
+                }
 
-          });
-         return false;
+         });
+        return false;
 
-    });
+   });
 
-        </script>
-    </section>
+//]]>
+</script>
 </body>
 </html>

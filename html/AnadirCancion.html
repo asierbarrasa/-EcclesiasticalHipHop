@@ -1,89 +1,88 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel='stylesheet' type='text/css' href='../css/estilos.css' />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Document</title>
+<link rel='stylesheet' type='text/css' href='../css/estilos.css' />
 </head>
 <body>
-     <h1>Ecclesiastical Hip Hop</h1>
-     <br>
-     <nav>
-         <ul>
-             
-             <li><a href="AnadirCancion.html"><b>Añadir canción</b></a></li>
-             <li><a href="Intro.html">Inicio</a></li>
-             <li><a href="../php/logOut.php"><i>LogOut</i></a></li>
-         </ul>
-     </nav>
-    <section class="insertar">
-        <form class="formulario"  id="fanadir" >
-            <label >Titulo: </label><br><input type="text" id="titulo" required>
-            <br>
-            <label >Artista: </label><br><input type="text" id="artista" required>
-            <br>
-            <label >Genero:</label><br><input type="text" id="genero" required>
-            <br>
-            <label >Año:</label><br><input type="text" id="ano" required>
-            <br>
-            <label >Seleccionar cancion:</label><br><input type ="file" name="audio" id="audio" required>
-            <br><br>
-            <input type="submit" value="Añadir Cancion" class="btn" id="anadir">
-        </form>
-        <br>
-        <div id="response"></div>
-    </section>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script>
+<a href="Intro.html"><h1>Ecclesiastical Hip Hop</h1></a>
+<br />
+<ul>
+<li><a href="../php/getBiblioteca.php" >Tu biblioteca</a></li>
+<li><a href="AnadirCancion.html">A&ntilde;adir canci&oacute;n</a></li>
+<li><a href="FiltrarCanciones.html">Toda la musica</a></li>
+<li><a href="../php/logOut.php"><i>LogOut</i></a></li>
+</ul>
+<form class="formulario" id="fanadir"><label>Titulo:</label><br />
+<input type="text" id="titulo" required="" /><br />
+<label>Artista:</label><br />
+<input type="text" id="artista" required="" /><br />
+<label>Genero:</label><br />
+<input type="text" id="genero" required="" /><br />
+<label>A&ntilde;o:</label><br />
+<input type="number" id="ano" required="" /><br />
+<label>Seleccionar cancion:</label><br />
+<input type="file" name="audio" id="audio" required="" /><br />
+<br />
+<input type="submit" value="A&ntilde;adir Cancion" class="btn" id="anadir" /></form>
+<br />
+<div id="response"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript">
+</script><script type="text/javascript">
+//<![CDATA[
 $("#fanadir").submit(function(event){
-    event.preventDefault();
-  var dataF = new FormData();
-  dataF.append("titulo",$("#titulo").val());
-  dataF.append("artista",$("#artista").val());
-  dataF.append("genero",$("#genero").val());
-  dataF.append("ano",$("#ano").val());
-  dataF.append("audio",$("#audio")[0].files[0]);
-  console.log(dataF.entries())
+   event.preventDefault();
+ var dataF = new FormData();
+ dataF.append("titulo",$("#titulo").val());
+ dataF.append("artista",$("#artista").val());
+ dataF.append("genero",$("#genero").val());
+ dataF.append("ano",$("#ano").val());
+ dataF.append("audio",$("#audio")[0].files[0]);
+ console.log(dataF.entries())
 
- $.ajax({
-   url :'../php/anadirCancion.php',
-   type:'POST',
-   data: dataF,
-   processData: false,
-   cache: false,
-   contentType: false,
-   success: function(e){
-     switch(e){
-         case "Correcto":
-             $("#response").html("<strong>Cancion añadida correctamente.</strong>");
-             $("#fañadir")[0].reset();
-             break;
+$.ajax({
+  url :'../php/anadirCancion.php',
+  type:'POST',
+  data: dataF,
+  processData: false,
+  cache: false,
+  contentType: false,
+  success: function(e){
+    switch(e){
+        case "Correcto":
+            $("#response").html("<strong>Cancion a&ntilde;adida correctamente.<\/strong>");
+            $("#faÃ±adir")[0].reset();
+            break;
 
-         default:
-	   $("#response").html("<strong>Cancion añadida correctamente.</strong>");
-	   $("#fañadir")[0].reset();
-	   break;
-     }
-   }
- });
+        default:
+          $("#response").html("<strong>Cancion a&ntilde;adida correctamente.<\/strong>");
+          $("#faÃ±adir")[0].reset();
+          break;
+    }
+  }
+});
 });
 
 $(document).ready(function(){
-            $.ajax({
-                url:"../php/seguridad.php",
-                type:'POST',
-                success: function(e){
-                    switch(e){
-                        case "Si":
-                            break;
-                        default:
-                            $(location).attr("href","../index.html");
-                            break;
-                    }
-                }
-            });
-        });
+           $.ajax({
+               url:"../php/seguridad.php",
+               type:'POST',
+               success: function(e){
+                   switch(e){
+                       case "Si":
+                           break;
+                       default:
+                          // $(location).attr("href","../index.html");
+                           break;
+                   }
+               }
+           });
+       });
+//]]>
 </script>
 </body>
 </html>
+ 
+
+

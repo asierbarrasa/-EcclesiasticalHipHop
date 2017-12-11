@@ -22,11 +22,11 @@
 
     					$cancion = $xml->addChild('cancion');
 
-    					$titulo = $cancion -> addChild('titulo',$_POST['titulo']);
+    					$titulo = $cancion -> addChild('titulo',strtolower($_POST['titulo']));
 
-              $artista = $cancion -> addChild('artista',$_POST['artista']);
+              $artista = $cancion -> addChild('artista',strtolower($_POST['artista']));
 
-              $genero = $cancion -> addChild('genero',$_POST['genero']);
+              $genero = $cancion -> addChild('genero',strtolower($_POST['genero']));
 
               $ano = $cancion -> addChild('ano',$_POST['ano']);
 
@@ -39,11 +39,11 @@
 
     					$cancion = $xml2->addChild('cancion');
 
-    					$titulo = $cancion -> addChild('titulo',$_POST['titulo']);
+    					$titulo = $cancion -> addChild('titulo',strtolower($_POST['titulo']));
 
-              $artista = $cancion -> addChild('artista',$_POST['artista']);
+              $artista = $cancion -> addChild('artista',strtolower($_POST['artista']));
 
-              $genero = $cancion -> addChild('genero',$_POST['genero']);
+              $genero = $cancion -> addChild('genero',strtolower($_POST['genero']));
 
               $ano = $cancion -> addChild('ano',$_POST['ano']);
 

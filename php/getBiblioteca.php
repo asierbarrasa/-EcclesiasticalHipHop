@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Document</title>
+<link rel='stylesheet' type='text/css' href='../css/estilos.css' />
+</head>
+<body>
+<a href="../html/Intro.html"><h1>Ecclesiastical Hip Hop</h1></a>
+
+<br />
+<ul>
+<li><a href="../php/getBiblioteca.php" >Tu biblioteca</a></li>
+<li><a href="../html/AnadirCancion.html">A&ntilde;adir canci&oacute;n</a></li>
+<li><a href="../html/FiltrarCanciones.html">Toda la musica</a></li>
+<li><a href="logOut.php"><i>LogOut</i></a></li>
+</ul>
+</body>
+</html>
+
+
+
+
+
 <?php
 session_start();
 $us = $_SESSION["email"];
