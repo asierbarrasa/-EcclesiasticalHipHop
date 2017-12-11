@@ -71,11 +71,11 @@ input{
 }
 
 input:hover{
-   border-bottom: 2px solid firebrick;
+  border-bottom: 2px solid black;
 }
 
 input:focus{
-    border-bottom: 2px solid firebrick;
+ border-bottom: 2px solid black;
 
 }
 
@@ -97,7 +97,6 @@ label{
 
 #mainSection div{
     display: block;
-   // border: 1px solid black;
     width: 40%;
     margin-left: 30%;
     margin-right:30%;
