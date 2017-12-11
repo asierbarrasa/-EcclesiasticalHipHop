@@ -16,7 +16,7 @@ echo '<!DOCTYPE html>
 
 <br />
 <ul>
-<li><a href="../php/getBiblioteca.php" >Tu biblioteca</a></li>
+<li><a href="../php/getBiblioteca.php" ><b>Tu biblioteca</b></a></li>
 <li><a href="../html/AnadirCancion.html">A&ntilde;adir canci&oacute;n</a></li>
 <li><a href="../html/FiltrarCanciones.html">Toda la musica</a></li>
 <li><a href="logOut.php"><i>LogOut</i></a></li>
