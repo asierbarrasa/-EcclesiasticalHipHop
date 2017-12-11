@@ -1,9 +1,15 @@
-<!DOCTYPE html>
+<?php
+session_start();
+$us = $_SESSION["email"];
+$path = "../Users/$us/canciones.xml";
+$xml = simplexml_load_file($path);
+
+echo '<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Document</title>
-<link rel='stylesheet' type='text/css' href='../css/estilos.css' />
+<title>Ecclesiastical Hip Hop</title>
+<link rel="stylesheet" type="text/css" href="../css/estilos.css" />
 </head>
 <body>
 <a href="../html/Intro.html"><h1>Ecclesiastical Hip Hop</h1></a>
@@ -15,19 +21,23 @@
 <li><a href="../html/FiltrarCanciones.html">Toda la musica</a></li>
 <li><a href="logOut.php"><i>LogOut</i></a></li>
 </ul>
+<div>';
+echo '<table border=1> <tr> <th> Titulo </th> <th> Artista </th>'
+    .'<th> Genero </th><th> A&ntilde;o </th><th> Reproducir </th></tr>';
+echo '</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript">
 </script><script type="text/javascript">
 //<![CDATA[
        $(document).ready(function(){
            $.ajax({
                url:"../php/seguridad.php",
-               type:'POST',
+               type:"POST",
                success: function(e){
                    switch(e){
                        case "Si":
                            break;
                        default:
-                           $(location).attr("href","../index.html");
+                           //(location).attr("href","../index.html");
                            break;
                    }
                }
@@ -36,15 +46,7 @@
 //]]>
 </script>
 </body>
-</html>
-
-<?php
-session_start();
-$us = $_SESSION["email"];
-$path = "../Users/$us/canciones.xml";
-$xml = simplexml_load_file($path);
-echo '<table border=1> <tr> <th> Titulo </th> <th> Artista </th>'
-    .'<th> Genero </th><th> Año </th><th> Reproducir </th></tr>';
+</html>';
 
 foreach($xml->xpath('//cancion') as $cancion){
 
