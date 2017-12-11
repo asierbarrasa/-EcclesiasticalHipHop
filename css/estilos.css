@@ -103,6 +103,14 @@ label{
     height: auto;
 }
 
+.centrado{
+    display: block;
+    width: 40%;
+    margin-left: 25%;
+    margin-right:30%;
+    height: auto;
+}
+
 a{
     text-decoration: none;
     color: black;

@@ -21,8 +21,8 @@ echo '<!DOCTYPE html>
 <li><a href="../html/FiltrarCanciones.html">Toda la musica</a></li>
 <li><a href="logOut.php"><i>LogOut</i></a></li>
 </ul>
-<div>';
-echo '<table border=1> <tr> <th> Titulo </th> <th> Artista </th>'
+<div class=centrado>';
+echo '<table border=1 > <tr> <th> Titulo </th> <th> Artista </th>'
     .'<th> Genero </th><th> A&ntilde;o </th><th> Reproducir </th></tr>';
 echo '</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript">
