@@ -48,8 +48,7 @@ echo '</div>
 </body>
 </html>';
 
-foreach($xml->xpath('//cancion') as $cancion){
-
+foreach ($xml->xpath('//cancion') as $cancion) {
     echo '<tr><td>'.$cancion->titulo.'</td><td>'.$cancion->artista.'</td><td>'.$cancion->genero.'</td><td>'.$cancion->ano.'</td><td>'
     .'<audio controls><source src="'.$cancion->path.'" type="audio/mpeg"></audio></td></tr>';
 }
@@ -63,4 +62,3 @@ echo  '<script>$("audio").bind("play", function() {
     if(this != activated) this.pause();
   });
 });</script>';
- ?>
