@@ -1,92 +1,123 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Ecclesiastical Hip Hop</title>
-<link rel='stylesheet' type='text/css' href='../css/estilos.css' />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Ecclesiastical Hip Hop</title>
+  <!-- <link rel='stylesheet' type='text/css' href='../css/estilos.css' /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-<h1>Ecclesiastical Hip Hop</h1>
-<form class="formulario" id="form"><label>Correo:</label><br />
-<input type="email" name="email" id="email" required="" /><br />
-<label>Contrase&ntilde;a:</label><br />
-<input type="password" id="pass" name="pass" required="" /><br />
-<label>Repetir Contrase&ntilde;a:</label><br />
-<input type="password" id="pass2" required="" /><br />
-<br />
-<input type="submit" value="Registrarse" class="btn" /></form>
-<div id="response"></div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript">
-</script><script type="text/javascript">
-//<![CDATA[
 
-   $("#form").submit(function(event){
-       event.preventDefault();
-     if($("#pass").val().length < 6){
-       alert("La contrase&ntilde;a tiene que ser mayor de 6 caracteres");
-     }
-     else if($("#pass").val()!=$("#pass2").val()){
-         alert("Las contrase&ntilde;as no coinciden.")
-     }
-     else{
-       var data = new FormData(this);
-       $.ajax({
-         url: '../php/signUp.php',
-         type: 'POST',
-         data: data,
-         processData: false,
-         cache: false,
-         contentType: false,
-         success: function(e){
-             switch(e){
-               case "Correcto":
-                   var dataForm = new FormData();
-                   dataForm.append('email', $("#email").val());
-                   dataForm.append('pass', $("#pass").val());
-                   $.ajax({
-                       url: '../php/login.php',
-                       type: 'POST',
-                       data: dataForm,
-                       processData: false,
-                       cache: false,
-                       contentType: false,
-                       success: function(e){
-                           switch(e){
-                             case "Correcto":
-                               $(location).attr('href','Intro.html');
-                               break;
-                             case "Error":
-                               $("#response").html("<strong>Usuario o contrase&ntilde;a incorrecto.<\/strong>");
-                               break;
-                             default:
-                               $("#response").html("<strong>Ha ocurrido un error con el servidor.<\/strong>");
-                               break;
-                           }
-                         }
+<<body class="center-align container">
+  <h1>Ecclesiastical Hip Hop</h1>
+  <form class="formulario" method="post" id="flogin" name="flogin" enctype="multipart/form-data">
 
-                 });
-                 break;
+    <div class="row">
+
+      <div class="col s3"></div>
+      <div class="input-field col s6">
+        <input id="email" type="email" class="validate" name="email">
+        <label for="email">Email</label>
+      </div>
+      <div class="col s3"></div>
+    </div>
+
+    <div class="row">
+      <div class="col s3"></div>
+      <div class="input-field col s6">
+        <input id="pass" type="password" class="validate" name="pass">
+        <label for="password">Password</label>
+      </div>
+      <div class="col s3"></div>
+    </div>
+
+    <div class="row">
+      <div class="col s3"></div>
+      <div class="input-field col s6">
+        <input id="pass2" type="password" class="validate" name="pass">
+        <label for="password">Repeat Password</label>
+      </div>
+      <div class="col s3"></div>
+    </div>
+
+    <button class="btn waves-effect waves-light" type="submit" name="action" id="btn">Registrate!
+  <i class="material-icons right">send</i>
+  </button>
+
+    <div id="response"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      //<![CDATA[
+
+      $("#form").submit(function(event) {
+        event.preventDefault();
+        if ($("#pass").val().length < 6) {
+          alert("La contrase&ntilde;a tiene que ser mayor de 6 caracteres");
+        } else if ($("#pass").val() != $("#pass2").val()) {
+          alert("Las contrase&ntilde;as no coinciden.")
+        } else {
+          var data = new FormData(this);
+          $.ajax({
+            url: '../php/signUp.php',
+            type: 'POST',
+            data: data,
+            processData: false,
+            cache: false,
+            contentType: false,
+            success: function(e) {
+              switch (e) {
+                case "Correcto":
+                  var dataForm = new FormData();
+                  dataForm.append('email', $("#email").val());
+                  dataForm.append('pass', $("#pass").val());
+                  $.ajax({
+                    url: '../php/login.php',
+                    type: 'POST',
+                    data: dataForm,
+                    processData: false,
+                    cache: false,
+                    contentType: false,
+                    success: function(e) {
+                      switch (e) {
+                        case "Correcto":
+                          $(location).attr('href', 'Intro.html');
+                          break;
+                        case "Error":
+                          $("#response").html("<strong>Usuario o contrase&ntilde;a incorrecto.<\/strong>");
+                          break;
+                        default:
+                          $("#response").html("<strong>Ha ocurrido un error con el servidor.<\/strong>");
+                          break;
+                      }
+                    }
+
+                  });
+                  break;
 
 
-               case "Error1":
-                 $("#response").html("<strong>Email ya en uso.<\/strong>");
-                 break;
-               case "Error2":
-               $("#response").html("<strong>Error, no se ha podido completar el registro.<\/strong>");
-               break;
-               default:
-               $("#response").html("<strong>Error del servior.<\/strong>");
-               break;
+                case "Error1":
+                  $("#response").html("<strong>Email ya en uso.<\/strong>");
+                  break;
+                case "Error2":
+                  $("#response").html("<strong>Error, no se ha podido completar el registro.<\/strong>");
+                  break;
+                default:
+                  $("#response").html("<strong>Error del servior.<\/strong>");
+                  break;
 
 
-             }
+              }
             }
-       });
-     }
-     return false;
-   });
+          });
+        }
+        return false;
+      });
 
-//]]>
-</script>
-</body>
+      //]]>
+    </script>
+    </body>
+
 </html>
