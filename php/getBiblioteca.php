@@ -22,9 +22,9 @@ echo '<!DOCTYPE html>
       <a href="#" class="brand-logo">Ecclesiastical Hip Hop</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Añadir cancion</a></li>
-        <li><a href="badges.html">Mis canciones</a></li>
-        <li><a href="collapsible.html">Biblioteca</a></li>
+        <li ><a href="../html/anadirCancion.html">Añadir cancion</a></li>
+        <li><a href="../html/filtrarCanciones.html">Mis canciones</a></li>
+        <li  class="active"><a href="getBiblioteca.php">Biblioteca</a></li>
       </ul>
     </div>
   </nav>
