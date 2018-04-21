@@ -40,6 +40,7 @@ echo '<table border=1 > <tr> <th> Titulo </th> <th> Artista </th>'
     .'<th> Genero </th><th> A&ntilde;o </th><th> Reproducir </th></tr>';
 echo '</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 </script><script type="text/javascript">
 //<![CDATA[
        $(document).ready(function(){
