@@ -19,21 +19,23 @@ echo '<!DOCTYPE html>
   <br>
   <nav>
     <div class="nav-wrapper teal lighten-2">
-      <a href="#" class="brand-logo">Ecclesiastical Hip Hop</a>
+      <a href="Intro.html" class="brand-logo">Ecclesiastical Hip Hop</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li ><a href="../html/anadirCancion.html">Añadir cancion</a></li>
+        <li><a href="anadirCancion.html">Añadir cancion</a></li>
         <li><a href="../html/filtrarCanciones.html">Mis canciones</a></li>
         <li  class="active"><a href="getBiblioteca.php">Biblioteca</a></li>
+        <li><a href="../index.html"><i class="material-icons right">person</i></a></li>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Sass</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
+    <li><a href="../html/intro.html">Intro</a></li>
+    <li><a href="../html/anadirCancion.html">Añadir cancion</a></li>
+    <li class="active"><a href="../html/filtrarCanciones.html">Mis canciones</a></li>
+    <li><a href="getBiblioteca.php">Biblioteca</a></li>
+    <li><a href="../index.html">Cerrar Sesion</a></li>
   </ul>
 <div class=centrado>';
 echo '<table border=1 > <tr> <th> Titulo </th> <th> Artista </th>'
