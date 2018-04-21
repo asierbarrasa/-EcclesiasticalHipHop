@@ -6,21 +6,35 @@ $xml = simplexml_load_file($path);
 
 echo '<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Ecclesiastical Hip Hop</title>
-<link rel="stylesheet" type="text/css" href="../css/estilos.css" />
-</head>
-<body>
-<a href="../html/Intro.html"><h1>Ecclesiastical Hip Hop</h1></a>
 
-<br />
-<ul>
-<li><a href="../php/getBiblioteca.php" ><b>Tu biblioteca</b></a></li>
-<li><a href="../html/AnadirCancion.html">A&ntilde;adir canci&oacute;n</a></li>
-<li><a href="../html/FiltrarCanciones.html">Toda la musica</a></li>
-<li><a href="logOut.php"><i>LogOut</i></a></li>
-</ul>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Ecclesiastical Hip Hop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body class="container">
+  <br>
+  <nav>
+    <div class="nav-wrapper teal lighten-2">
+      <a href="#" class="brand-logo">Ecclesiastical Hip Hop</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">Añadir cancion</a></li>
+        <li><a href="badges.html">Mis canciones</a></li>
+        <li><a href="collapsible.html">Biblioteca</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="sass.html">Sass</a></li>
+    <li><a href="badges.html">Components</a></li>
+    <li><a href="collapsible.html">Javascript</a></li>
+    <li><a href="mobile.html">Mobile</a></li>
+  </ul>
 <div class=centrado>';
 echo '<table border=1 > <tr> <th> Titulo </th> <th> Artista </th>'
     .'<th> Genero </th><th> A&ntilde;o </th><th> Reproducir </th></tr>';
