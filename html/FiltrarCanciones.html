@@ -37,7 +37,7 @@
     <br>
     <div class="row">
       <div class="input-field col s12">
-        <input id="titulFiltrar" type="text" class="validate" name="titulo">
+        <input id="tituloFiltrar" type="text" class="validate" name="titulo">
         <label for="titulo">Titulo</label>
       </div>
     </div>
@@ -45,7 +45,7 @@
     <div class="row">
 
       <div class="input-field col s12">
-        <input id="artistaFiltrar" type="text" class="validate" name="artista">
+        <input id="artistaFiltrar" type="text" class="validate" name="autor">
         <label for="artista">Artista</label>
       </div>
 
@@ -73,58 +73,63 @@
         <i class="material-icons right">search</i>
   </button>
     </div>
+
   </form>
 
+  <divclass="card hoverable">
+    <div class="card-content center-align" id="aqui">
+    </div>
+    </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-  <script type="text/javascript">
-    //<![CDATA[
-    document.addEventListener('play', function(e) {
-      var audios = document.getElementsByTagName('audio');
-      for (var i = 0, len = audios.length; i < len; i++) {
-        if (audios[i] != e.target) {
-          audios[i].pause();
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      //<![CDATA[
+      document.addEventListener('play', function(e) {
+        var audios = document.getElementsByTagName('audio');
+        for (var i = 0, len = audios.length; i < len; i++) {
+          if (audios[i] != e.target) {
+            audios[i].pause();
+          }
         }
+      }, true);
+
+      function devolverCanciones() {
+        var cadena = $("#fm").serialize();
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("aqui").innerHTML = this.responseText;
+          }
+        };
+        xhttp.open("POST", "../php/devolverCanciones.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(cadena);
       }
-    }, true);
 
-    function devolverCanciones() {
-      var cadena = $("#fm").serialize();
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("aqui").innerHTML = this.responseText;
-        }
-      };
-      xhttp.open("POST", "../php/devolverCanciones.php", true);
-      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhttp.send(cadena);
-    }
+      // $(document).ready(function() {
+      //   $.ajax({
+      //     url: "../php/seguridad.php",
+      //     type: 'POST',
+      //     success: function(e) {
+      //       switch (e) {
+      //         case "Si":
+      //           break;
+      //         default:
+      //           $(location).attr("href", "../index.html");
+      //           break;
+      //       }
+      //     }
+      //   });
+      // });
 
-    // $(document).ready(function() {
-    //   $.ajax({
-    //     url: "../php/seguridad.php",
-    //     type: 'POST',
-    //     success: function(e) {
-    //       switch (e) {
-    //         case "Si":
-    //           break;
-    //         default:
-    //           $(location).attr("href", "../index.html");
-    //           break;
-    //       }
-    //     }
-    //   });
-    // });
+      $(document).ready(function() {
+        $('.sidenav').sidenav();
+      });
 
-    $(document).ready(function() {
-      $('.sidenav').sidenav();
-    });
-
-    //]]>
-  </script>
+      //]]>
+    </script>
 </body>
 
 </html>

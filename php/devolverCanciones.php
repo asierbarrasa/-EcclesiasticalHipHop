@@ -2,8 +2,8 @@
 
     if (empty($_POST['ano']) and empty($_POST['autor']) and empty($_POST['genero']) and empty($_POST['titulo'])) {
         $xml = simplexml_load_file("../xml/canciones.xml");
-        echo '<div class=centrado>';
-        echo '<table border=1> <tr> <th> Titulo </th> <th> Artista </th>'
+        echo '<div>';
+        echo '<table> <tr> <th> Titulo </th> <th> Artista </th>'
     .'<th> Genero </th><th> A&ntilde;o </th><th> Reproducir </th></tr>';
 
         foreach ($xml->xpath('//cancion') as $cancion) {
@@ -62,7 +62,7 @@
 
         $cont = 0;
         $xml = simplexml_load_file("../xml/canciones.xml");
-        echo '<table border=1> <tr> <th> Titulo </th> <th> Artista </th>'
+        echo '<table> <tr> <th> Titulo </th> <th> Artista </th>'
     .'<th> Genero </th><th> Año </th><th> Reproducir </th></tr>';
         foreach ($xml->xpath($criterios) as $cancion) {
             $cont = $cont +1;
