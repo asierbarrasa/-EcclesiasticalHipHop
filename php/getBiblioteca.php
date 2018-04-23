@@ -72,7 +72,7 @@ echo '</div>
 </html>';
 
 foreach ($xml->xpath('//cancion') as $cancion) {
-    echo '<table class="highlight">''<tr><td>'.$cancion->titulo.'</td><td>'.$cancion->artista.'</td><td>'.$cancion->genero.'</td><td>'.$cancion->ano.'</td><td>'
+    echo '<table class="highlight"><tr><td>'.$cancion->titulo.'</td><td>'.$cancion->artista.'</td><td>'.$cancion->genero.'</td><td>'.$cancion->ano.'</td><td>'
     .'<audio controls><source src="'.$cancion->path.'" type="audio/mpeg"></audio></td></tr></table>';
 }
 
