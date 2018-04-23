@@ -15,11 +15,11 @@
   <nav>
     <div class="nav-wrapper teal lighten-2">
       <a href="Intro.html" class="brand-logo">Ecclesiastical Hip Hop</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger button-collapse" data-activates="slide-out"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="anadirCancion.html">Añadir cancion</a></li>
         <li><a href="filtrarCanciones.html">Mis canciones</a></li>
-        <li><a href="../getBiblioteca.php">Biblioteca</a></li>
+        <li><a href="../php/getBiblioteca.php">Biblioteca</a></li>
         <li><a href="../index.html"><i class="material-icons right">person</i></a></li>
       </ul>
     </div>
@@ -29,8 +29,8 @@
     <li class="active"><a href="intro.html">Intro</a></li>
     <li><a href="anadirCancion.html">Añadir cancion</a></li>
     <li><a href="filtrarCanciones.html">Mis canciones</a></li>
-    <li><a href="../getBiblioteca.php">Biblioteca</a></li>
-    <li><a href="../index.html">Cerrar Sesion</a></li>
+    <li><a href="../php/getBiblioteca.php">Biblioteca</a></li>
+    <li><a href="../index.html">Cerrar Sesión</a></li>
   </ul>
 
   <div id="res" class="card hoverable">
@@ -46,6 +46,10 @@
   <script>
     $(document).ready(function() {
       $('.sidenav').sidenav();
+    });
+
+    $('.sidenav').sideNav({
+      draggable: true, // Choose whether you can drag to open on touch screens,
     });
   </script>
   <!-- <script type="text/javascript">
