@@ -3,6 +3,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Ecclesiastical Hip Hop</title>
   <!-- <link rel='stylesheet' type='text/css' href='../css/estilos.css' /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
@@ -37,37 +38,54 @@
     <div class="row">
 
       <div class="input-field col s12">
-        <input id="tituloAnadir" type="text" class="validate" name="titulo">
+        <input id="titulo" type="text" class="validate" name="titulo">
         <label for="titulo">Titulo</label>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col s12">
-        <input id="artistaAnadir" type="text" class="validate" name="artista">
+        <input id="artista" type="text" class="validate" name="artista">
         <label for="artista">Artista</label>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col s12">
-        <input id="generoAnadir" type="text" class="validate" name="genero">
+        <input id="genero" type="text" class="validate" name="genero">
         <label for="genero">Genero</label>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col s12">
-        <input id="anoAnadir" type="number" class="validate" name="ano">
+        <input id="ano" type="number" class="validate" name="ano">
         <label for="ano">Año</label>
       </div>
     </div>
 
+    <div class="row">
+      <div class="input-field col s12">
+	<div class = "file-field input-field">
+                  <div class = "btn">
+                     <span>Browse</span>
+                     <input type ="file" id="audio"/>
+                  </div>
+
+                  <div class = "file-path-wrapper">
+                     <input class = "file-path validate" type = "text"
+                        placeholder = "Upload file" />
+                  </div>
+               </div>
+      </div>
+    </div>
+
     <div class="center-align">
-      <button class="btn waves-effect waves-dark " type="submit" name="action" id="btn" onclick="devolverCanciones()">Añadir!
+      <button class="btn waves-effect waves-dark " type="submit" name="action" id="btn">Añadir!
         <i class="material-icons right">add</i>
   </button>
     </div>
+  </form>
 
     <br />
     <div id="response"></div>
@@ -76,13 +94,19 @@
     <script type="text/javascript">
       //<![CDATA[
       $("#fanadir").submit(function(event) {
+        console.log("1")
         event.preventDefault();
-        var dataF = new FormData();
-        dataF.append("titulo", $("#titulo").val());
+        var dataF = new FormData(this);
+        dataF.append('audio', $("#audio")[0].files[0]);
+      /*  dataF.append("titulo", $("#titulo").val());
         dataF.append("artista", $("#artista").val());
         dataF.append("genero", $("#genero").val());
         dataF.append("ano", $("#ano").val());
-        dataF.append("audio", $("#audio")[0].files[0]);
+        dataF.append("audio", $("#audio")[0].files[0]); */
+
+        for (var pair of dataF.entries()) {
+      console.log(pair[0] + "," + pair[1]);
+  }
 
         $.ajax({
           url: '../php/anadirCancion.php',
@@ -92,17 +116,21 @@
           cache: false,
           contentType: false,
           success: function(e) {
+          console.log("2")
             switch (e) {
+
               case "Correcto":
+              console.log("correcto")
                 $("#response").html("<strong>Cancion a&ntilde;adida correctamente.<\/strong>");
                 $("#fanadir")[0].reset();
                 $(location).attr("href", "Intro.html");
                 break;
 
               default:
+              console.log(e)
                 $("#response").html("<strong>Cancion a&ntilde;adida correctamente.<\/strong>");
                 $("#fanadir")[0].reset();
-                $(location).attr("href", "Intro.html");
+                //$(location).attr("href", "Intro.html");
                 break;
             }
           }

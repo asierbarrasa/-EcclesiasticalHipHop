@@ -4,14 +4,14 @@
     if (isset($_POST["titulo"])) {
         if (empty($_POST["artista"]) || empty($_POST["genero"])|| empty($_POST["ano"])
                 ) {
-            echo "Error";
+            die("Error1");
         } else {
             $date = date("Ymdhis");
             if (is_uploaded_file($_FILES['audio']['tmp_name'])) {
                 $ruta = "../Users/".$_SESSION['email']."/".$date.".mp3";
                 move_uploaded_file($_FILES['audio']['tmp_name'], $ruta);
             } else {
-                echo "Error";
+                die("Error2");
             }
 
             $xml = simplexml_load_file('../Users/'.$_SESSION["email"].'/canciones.xml');
@@ -49,4 +49,5 @@
             die("Correcto");
         }
     }
-            echo "Error";
+            die("Error3");
+?>
