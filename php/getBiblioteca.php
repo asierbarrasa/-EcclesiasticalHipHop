@@ -47,9 +47,9 @@ echo '</div>
 //<![CDATA[
 
 
-        $(document).ready(function() {
-          $(".sidenav").sidenav();
-        });
+      //  $(document).ready(function() {
+        //  $(".sidenav").sidenav();
+    //    });
 
        $(document).ready(function(){
            $.ajax({
@@ -73,15 +73,48 @@ echo '</div>
 
 foreach ($xml->xpath('//cancion') as $cancion) {
     echo '<table class="highlight"><tr><td>'.$cancion->titulo.'</td><td>'.$cancion->artista.'</td><td>'.$cancion->genero.'</td><td>'.$cancion->ano.'</td><td>'
-    .'<audio controls><source src="'.$cancion->path.'" type="audio/mpeg"></audio></td></tr></table>';
+    .'<button type="button" class="btn playButton" id="'.$cancion->path.'>Play</button>"</td></tr></table>';
 }
 
-echo '</table>';
-
+echo '</table> <br> <audio controls><source id="audioSource" src= "" type="audio/mpeg"></audio>';
 echo ' <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>';
-echo  '<script>$("audio").bind("play", function() {
+echo  '<script>
+var tracks = []
+var current = 1;
+
+$("audio").bind("play", function() {
   activated = this;
   $('.'"audio"'.').each(function() {
     if(this != activated) this.pause();
+    });
   });
-});</script>';
+  $(document).ready(init());
+  function init(){
+  var tracks = [""';
+  foreach ($xml->xpath('//cancion') as $cancion){
+    echo ',"'.$cancion->path.'"';
+  }
+echo '];
+      $("#audioSource").attr("src", tracks[1]);
+    };
+
+    $(".playButton").click(function(){
+    
+    $("#audioSource").attr("src", $(this).attr("id"))
+    $("audio")[0].play()
+  });
+
+    $("audio").bind("onended",function() {
+       if (current == tracks.length-1){
+         current = 1;
+       }
+       else{
+       current ++;
+     }
+     $("audio")[0].src = tracks[current];
+     $("audio")[0].play();
+
+   });
+
+
+</script>';
