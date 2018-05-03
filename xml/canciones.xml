@@ -1,38 +1,3 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="verPreguntas.xsl"?>
-<canciones>
-	<cancion>
-		<nombre>
-			<value>El mejor</value>
-		</nombre>
-		<artista>
-			<value>Aitor</value>
-		</artista>
-		<genero>
-			<value>Trap</value>
-		</genero>
-    <ano>
-			<value>2018</value>
-		</ano>
-    <path>
-			<value>../xml/Aitor.mp3</value>
-		</path>
-	</cancion>
-	<cancion>
-		<nombre>
-			<value>Un temón</value>
-		</nombre>
-		<artista>
-			<value>Aitor</value>
-		</artista>
-		<genero>
-			<value>Reggaeton</value>
-		</genero>
-    <ano>
-			<value>2017</value>
-		</ano>
-    <path>
-			<value>../xml/reggaeton.mp3</value>
-		</path>
-	</cancion>
-</canciones>
+<canciones><cancion><titulo>prueba</titulo><artista>prueba</artista><genero>prueba</genero><ano>1</ano><path>../Users/aitor@aitor.com/20180424104708.mp3</path></cancion><cancion><titulo>11</titulo><artista>sss</artista><genero>111</genero><ano>23</ano><path>../Users/aitor@aitor.com/20180425082033.mp3</path></cancion><cancion><titulo>ring</titulo><artista>ring</artista><genero>ring</genero><ano>12</ano><path>../Users/aitor@aitor.com/20180425082558.mp3</path></cancion><cancion><titulo>iphone</titulo><artista>a</artista><genero>a</genero><ano>2003</ano><path>../Users/asier@gmail.com/20180425090327.mp3</path></cancion></canciones>

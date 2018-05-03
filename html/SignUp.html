@@ -3,6 +3,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Ecclesiastical Hip Hop</title>
   <!-- <link rel='stylesheet' type='text/css' href='../css/estilos.css' /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
@@ -12,7 +13,7 @@
 
 <body class="center-align container">
   <h1>Ecclesiastical Hip Hop</h1>
-  <form class="formulario" method="post" id="flogin" name="flogin" enctype="multipart/form-data">
+  <form class="formulario" method="post" id="form" name="flogin" enctype="multipart/form-data">
 
     <div class="row">
 
@@ -54,12 +55,16 @@
 
       $("#form").submit(function(event) {
         event.preventDefault();
+        console.log("1")
         if ($("#pass").val().length < 6) {
           alert("La contrase&ntilde;a tiene que ser mayor de 6 caracteres");
         } else if ($("#pass").val() != $("#pass2").val()) {
           alert("Las contrase&ntilde;as no coinciden.")
         } else {
-          var data = new FormData(this);
+          console.log("2")
+          var data = new FormData();
+          data.append('pass', $("#pass").val());
+          data.append('email', $("#email").val())
           $.ajax({
             url: '../php/signUp.php',
             type: 'POST',
@@ -68,6 +73,7 @@
             cache: false,
             contentType: false,
             success: function(e) {
+              console.log("3")
               switch (e) {
                 case "Correcto":
                   var dataForm = new FormData();
@@ -81,6 +87,7 @@
                     cache: false,
                     contentType: false,
                     success: function(e) {
+                      console.log("4")
                       switch (e) {
                         case "Correcto":
                           $(location).attr('href', 'Intro.html');
@@ -113,6 +120,7 @@
             }
           });
         }
+        console.log("error")
         return false;
       });
 
