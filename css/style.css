@@ -4,3 +4,11 @@
 body {
   font-family: 'Quicksand', sans-serif;
 }
+
+#navBarTitle{
+  margin-left: 2%;
+}
+#prueba{
+  display: block;
+  text-align: center;
+}
