@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ecclesiastical Hip Hop</title>
   <!-- <link rel='stylesheet' type='text/css' href='../css/estilos.css' /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-
+  <link rel="stylesheet" href="../css/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
@@ -15,12 +16,12 @@
   <br>
   <nav>
     <div class="nav-wrapper teal lighten-2">
-      <a href="Intro.html" class="brand-logo">Ecclesiastical Hip Hop</a>
+      <a href="Intro.html" class="brand-logo navBarTitle">Ecclesiastical Hip Hop</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="anadirCancion.html">Añadir cancion</a></li>
         <li class="active"><a href="filtrarCanciones.html">Mis canciones</a></li>
-        <li><a href="../getBiblioteca.php">Biblioteca</a></li>
+        <li><a href="../php/getBiblioteca.php">Biblioteca</a></li>
         <li><a href="../index.html"><i class="material-icons right">person</i></a></li>
       </ul>
     </div>
@@ -30,107 +31,116 @@
     <li><a href="intro.html">Intro</a></li>
     <li><a href="anadirCancion.html">Añadir cancion</a></li>
     <li class="active"><a href="filtrarCanciones.html">Mis canciones</a></li>
-    <li><a href="../getBiblioteca.php">Biblioteca</a></li>
+    <li><a href="../php/getBiblioteca.php">Biblioteca</a></li>
     <li><a href="../index.html">Cerrar Sesion</a></li>
   </ul>
 
   <form class="formulario" name="fm" id="fm">
     <br>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="tituloFiltrar" type="text" class="validate" name="titulon">
-        <label for="titulon">Titulo</label>
-      </div>
-    </div>
+    <ul class="collapsible popout" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header">
+          <i class="material-icons">search</i>Filtrar</div>
+        <div class="collapsible-body">
 
-    <div class="row">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="tituloFiltrar" type="text" class="validate" name="titulo">
+              <label for="titulo">Titulo</label>
+            </div>
+          </div>
 
-      <div class="input-field col s12">
-        <input id="artistaFiltrar" type="text" class="validate" name="autorn">
-        <label for="artistan">Artista</label>
-      </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="artistaFiltrar" type="text" class="validate" name="autor">
+              <label for="artista">Artista</label>
+            </div>
+          </div>
 
-    </div>
+          <div class="row">
+            <div class="input-field col s6 m6">
+              <input id="generoFiltar" type="text" class="validate" name="genero">
+              <label for="genero">Genero</label>
+            </div>
 
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="generoFiltar" type="text" class="validate" name="generon">
-        <label for="generon">Genero</label>
-      </div>
+            <div class="input-field col s6 m6">
+              <input id="anoFiltrar" type="number" class="validate" name="ano">
+              <label for="ano">Año</label>
+            </div>
 
-    </div>
+            <div class="center-align">
 
-    <div class="row">
+              <button class="btn waves-effect waves-dark " type="submit" name="action" id="btn" onclick="devolverCanciones()">Filtrar!
 
-      <div class="input-field col s12">
-        <input id="anoFiltrar" type="number" class="validate" name="anon">
-        <label for="anon">Año</label>
-      </div>
+              <i class="material-icons right">search</i>
 
-    </div>
-
-    <div class="center-align">
-      <button class="btn waves-effect waves-dark " type="submit" name="action" id="btn" onclick="devolverCanciones()">Filtrar!
-        <i class="material-icons right">search</i>
-  </button>
-    </div>
-
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
   </form>
 
-  <divclass="card hoverable">
-    <div class="card-content center-align" id="aqui">
+  <div class="card hoverable">
+    <div class="card-content center-align">
+      <div id="aqui"></div>
     </div>
-    </div>
+  </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script type="text/javascript">
+    //<![CDATA[
+    $("#fm").submit(function(event) {
+      event.preventDefault();
+    });
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script type="text/javascript">
-      //<![CDATA[
-      document.addEventListener('play', function(e) {
-        var audios = document.getElementsByTagName('audio');
-        for (var i = 0, len = audios.length; i < len; i++) {
-          if (audios[i] != e.target) {
-            audios[i].pause();
-          }
+    document.addEventListener('play', function(e) {
+      var audios = document.getElementsByTagName('audio');
+      for (var i = 0, len = audios.length; i < len; i++) {
+        if (audios[i] != e.target) {
+          audios[i].pause();
         }
-      }, true);
-
-      function devolverCanciones() {
-        var cadena = $("#fm").serialize();
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("aqui").innerHTML = this.responseText;
-          }
-        };
-        xhttp.open("POST", "../php/devolverCanciones.php", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send(cadena);
       }
+    }, true);
 
-      // $(document).ready(function() {
-      //   $.ajax({
-      //     url: "../php/seguridad.php",
-      //     type: 'POST',
-      //     success: function(e) {
-      //       switch (e) {
-      //         case "Si":
-      //           break;
-      //         default:
-      //           $(location).attr("href", "../index.html");
-      //           break;
-      //       }
-      //     }
-      //   });
-      // });
+    function devolverCanciones() {
+      var cadena = $("#fm").serialize();
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("aqui").innerHTML = this.responseText;
+        }
+      };
 
-      $(document).ready(function() {
-        $('.sidenav').sidenav();
-      });
+      xhttp.open("POST", "../php/devolverCanciones.php", true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send(cadena);
+    }
+    // $(document).ready(function() {
+    //   $.ajax({
+    //     url: "../php/seguridad.php",
+    //     type: 'POST',
+    //     success: function(e) {
+    //       switch (e) {
+    //         case "Si":
+    //           break;
+    //         default:
+    //           $(location).attr("href", "../index.html");
+    //           break;
+    //       }
+    //     }
+    //   });
+    // });
 
-      //]]>
-    </script>
+    $(document).ready(function() {
+      devolverCanciones();
+      $('.sidenav').sidenav();
+      $('.collapsible').collapsible();
+    });
+    //]]>
+  </script>
 </body>
 
 </html>

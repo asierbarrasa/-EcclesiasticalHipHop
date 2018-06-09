@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Ecclesiastical Hip Hop</title>
+  <!-- <link rel='stylesheet' type='text/css' href='../css/estilos.css' /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body class="container">
+  <br>
+
+  <!-- Dropdown Structure -->
+  <ul id="dropdown" class="dropdown-content">
+    <li><a href="#!">Mi cuenta</a></li>
+    <li><a href="#!">LogOut</a></li>
+
+  </ul>
+
+  <nav>
+    <div class="nav-wrapper teal lighten-2">
+      <a href="Intro.html" class="brand-logo" id="navBarTitle" id>Ecclesiastical Hip Hop</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger button-collapse" data-activates="slide-out"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="anadirCancion.html">Añadir cancion</a></li>
+        <li><a href="filtrarCanciones.html">Mis canciones</a></li>
+        <li><a href="../php/getBiblioteca.php">Biblioteca</a></li>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown"><i class="material-icons right">person</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li class="active"><a href="intro.html">Intro</a></li>
+    <li><a href="anadirCancion.html">Añadir cancion</a></li>
+    <li><a href="filtrarCanciones.html">Mis canciones</a></li>
+    <li><a href="../php/getBiblioteca.php">Biblioteca</a></li>
+    <li><a href="../index.html">Cerrar Sesión</a></li>
+  </ul>
+
+  <div id="res" class="card hoverable center-align">
+    <div class="row">
+      <div class="input-field col s8 m5 offset-m3">
+        <input id="" type="text" class="validate" name="name">
+        <label for="name">Nombre</label>
+      </div>
+
+      <div class=" input-field col s4 m1">
+        <button type="submit" class="btn waves-effect waves-light" name="nameButton"><i class="material-icons center">edit</i></button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s8 m5 offset-m3">
+        <input id="" type="email" class="validate" name="name">
+        <label for="name">Email</label>
+      </div>
+
+      <div class=" input-field col s4 m1">
+        <button type="submit" class="btn waves-effect waves-light" name="emailButton"><i class="material-icons center">edit</i></button>
+      </div>
+    </div>
+
+
+    <ul class="collapsible popout" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header" id="prueba">Cambiar contraseña!</div>
+        <div class="collapsible-body">
+
+          <div class="row">
+            <div class="input-field col s12 m6 offset-m3">
+              <input id="" type="password" class="validate" name="oldPass">
+              <label for="oldPass">Contraseña antigua</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12 m6 offset-m3">
+              <input id="" type="password" class="validate" name="newPass">
+              <label for="newPass">Contraseña nueva</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12 m6 offset-m3">
+              <input id="" type="password" class="validate" name="RepeatNewPass">
+              <label for="RepeatNewPass">Repetir</label>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <button type="submit" name="button" class="btn waves-effect waves-light">Guardar<i class="material-icons right">done</i></button> <br>
+    <br>
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('.sidenav').sidenav();
+      $('.collapsible').collapsible();
+    });
+
+
+
+
+    $(".dropdown-trigger").dropdown();
+
+    $('.sidenav').draggable();
+  </script>
+  <!-- <script type="text/javascript">
+    //<![CDATA[
+    $(document).ready(function() {
+      $.ajax({
+        url: "../php/seguridad.php",
+        type: 'POST',
+        success: function(e) {
+          switch (e) {
+            case "Si":
+              break;
+            default:
+              $(location).attr("href", "../index.html");
+              break;
+          }
+        }
+      });
+    });
+    //]]>
+  </script> -->
+
+</body>
+
+</html>

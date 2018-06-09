@@ -3,24 +3,39 @@
     if (empty($_POST['ano']) and empty($_POST['autor']) and empty($_POST['genero']) and empty($_POST['titulo'])) {
         $xml = simplexml_load_file("../xml/canciones.xml");
         echo '<div>';
-        echo '<table> <tr> <th> Titulo </th> <th> Artista </th>'
-    .'<th> Genero </th><th> A&ntilde;o </th><th> Reproducir </th></tr>';
+        echo '<table class="highlight centered responsive-table">   
+	<thead>
+          <tr>
+              <th>Titulo</th>
+              <th>Artista</th>
+              <th>Genero</th>
+ 		<th>Ano</th>
+              <th>Reproducir</th>
+
+          </tr>
+        </thead>';
 
         foreach ($xml->xpath('//cancion') as $cancion) {
-            echo '<tr><td>'.$cancion->titulo.'</td><td>'.$cancion->artista.'</td><td>'.$cancion->genero.'</td><td>'.$cancion->ano.'</td><td>'
-    .'<audio controls><source src="'.$cancion->path.'" type="audio/mpeg"></audio></td></tr>';
+            echo '<tbody><tr><td>'.$cancion->titulo.'</td><td>'.$cancion->artista.'</td><td>'.$cancion->genero.'</td><td>'.$cancion->ano.'</td><td>'
+    .'<audio controls><source src="'.$cancion->path.'" type="audio/mpeg"></audio></td></tr></tbody>';
         }
 
 
         echo '</table>
+
       </div>';
 
         echo ' <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>';
         echo  '<script>$("audio").bind("play", function() {
+
   activated = this;
+
   $('.'"audio"'.').each(function() {
+
     if(this != activated) this.pause();
+
   });
+
 });</script>';
     } else {
         $criterios = "";
@@ -72,10 +87,15 @@
         echo '</table>';
         echo ' <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>';
         echo  '<script>$("audio").bind("play", function() {
+
   activated = this;
+
   $('.'"audio"'.').each(function() {
+
     if(this != activated) this.pause();
+
   });
+
 });</script>';
         if ($cont == 0) {
             echo("No hay canciones con esas caracteristicas");

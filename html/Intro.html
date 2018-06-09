@@ -2,26 +2,35 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>Ecclesiastical Hip Hop</title>
   <!-- <link rel='stylesheet' type='text/css' href='../css/estilos.css' /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" href="../css/style.css">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body class="container">
   <br>
+
+  <!-- Dropdown Structure -->
+  <ul id="dropdown" class="dropdown-content">
+    <li><a href="userZone.html">Mi cuenta</a></li>
+    <li><a href="#!">LogOut</a></li>
+
+  </ul>
+
   <nav>
     <div class="nav-wrapper teal lighten-2">
-      <a href="Intro.html" class="brand-logo">Ecclesiastical Hip Hop</a>
+      <a href="Intro.html" class="brand-logo navBarTitle">Ecclesiastical Hip Hop</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger button-collapse" data-activates="slide-out"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="anadirCancion.html">Añadir cancion</a></li>
         <li><a href="filtrarCanciones.html">Mis canciones</a></li>
         <li><a href="../php/getBiblioteca.php">Biblioteca</a></li>
-        <li><a href="../index.html"><i class="material-icons right">person</i></a></li>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown"><i class="material-icons right">person</i></a></li>
       </ul>
     </div>
   </nav>
@@ -48,6 +57,9 @@
     $(document).ready(function() {
       $('.sidenav').sidenav();
     });
+
+
+    $(".dropdown-trigger").dropdown();
 
     $('.sidenav').draggable();
   </script>
