@@ -89,7 +89,7 @@ echo '</tbody></table> <br><div class="card">
     <div class="card-content center-align" id="aqui"> <audio controls><source id="audioSource" src= "" type="audio/mpeg"></audio></div></div>';
 echo ' <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>';
 echo  '<script>
-var tracks = []
+
 var current = 1;
 
 $("audio").bind("play", function() {
