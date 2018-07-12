@@ -29,6 +29,7 @@ echo '</tbody></table> <br><div class="card">
         echo ' <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>';
         echo  '<script>
         
+        alert("HOla");
         
 var current = 1;
 
@@ -48,6 +49,8 @@ $("audio").bind("play", function() {
 echo '];
 
 console.log(tracks);
+
+
       $("#audioSource").attr("src", tracks[1]);
 $("audio").load();
 
